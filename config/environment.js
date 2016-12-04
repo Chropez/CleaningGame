@@ -17,10 +17,28 @@ module.exports = function(environment) {
       }
     },
 
+    firebase: {
+      apiKey: "AIzaSyBUXtPCg7-oqWpcFdtn4Hqnr0mXqP9QJJg",
+      authDomain: "cleaninggame-d08ab.firebaseapp.com",
+      databaseURL: "https://cleaninggame-d08ab.firebaseio.com",
+      storageBucket: "cleaninggame-d08ab.appspot.com",
+      messagingSenderId: "650961684914"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-inline'",
+    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'connect-src': "'self'",
+    'img-src': "'self' data:",
+    'media-src': "'self'"
   };
 
   if (environment === 'development') {

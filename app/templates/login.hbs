@@ -1,0 +1,30 @@
+{{#paper-toolbar as |toolbar|}}
+  {{#toolbar.tools}}
+    <h2>Städspelet</h2>
+    <span class="flex"></span>
+    {{#paper-button iconButton=true}}
+      {{paper-icon "more_vert"}}
+    {{/paper-button}}
+  {{/toolbar.tools}}
+{{/paper-toolbar}}
+
+
+<div class="layout-row layout-xs-column">
+  <div class="layout-column flex-xs flex-gt-xs-50">
+    {{#paper-card as |card|}}
+      {{#card.content class=""}}
+
+        <form {{action (route-action "login" name) on="submit"}}>
+          <div class="layout-row">
+            <div class="layout-column flex-50">
+              {{paper-input label="Välj ett namn" value=name onChange=(action (mut name)) required=true}}
+            </div>
+
+            {{#paper-button raised=true primary=true type="submit"}}Ok{{/paper-button}}
+          </div>
+        </form>
+
+      {{/card.content}}
+    {{/paper-card}}
+  </div>
+</div>
