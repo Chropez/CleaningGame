@@ -1,12 +1,13 @@
 import Ember from 'ember';
 import animalId from 'npm:animal-id';
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
 const {
   inject: { service },
   Route
 } = Ember;
 
-export default Route.extend({
+export default Route.extend(ApplicationRouteMixin, {
   session: service(),
 
   beforeModel() {
