@@ -22,12 +22,11 @@
             {{/content.menu-item}}
 
             {{paper-divider}}
+            {{#content.menu-item onClick=(route-action "logout")}}
+              {{paper-icon "adb"}}
+              <span>Logga ut</span>
+            {{/content.menu-item}}
 
-            {{#each items as |item|}}
-              {{#content.menu-item onClick="openSomething"}}
-                {{paper-icon item.icon}} {{item.title}}
-              {{/content.menu-item}}
-            {{/each}}
           {{/menu.content}}
         {{/paper-menu}}
       {{/if}}

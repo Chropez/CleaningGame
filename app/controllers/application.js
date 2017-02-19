@@ -9,7 +9,7 @@ export default Controller.extend({
   session: service(),
 
   actions: {
-    changeName(newName) {
+    changeName(/*newName*/) {
       console.log('not implemented');
     }
   }
