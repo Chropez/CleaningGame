@@ -1,10 +1,17 @@
 {
   "name": "cleaning-game",
   "dependencies": {
-    "ember": "~2.9.0",
-    "ember-cli-shims": "~0.1.1",
     "firebase": "^3.0.0",
     "hammer.js": "^2.0.8",
     "matchMedia": "0.2.0"
-  }
+  },
+  "version": "0.0.0",
+  "description": "Small description for cleaning-game goes here",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/Chropez/CleaningGame.git",
+    "type": "git"
+  },
+  "author": "Christopher Lopez <chlo1259@gmail.com>",
+  "license": "MIT"
 }
