@@ -10,28 +10,20 @@ const {
 export default Route.extend(ApplicationRouteMixin, {
   session: service(),
 
-  beforeModel() {
-    // let session = this.get('session');
-    //
-    // if (session.get('isLoggedIn')) {
-    //   return;
-    // }
-    //
-    // let user = session.fetch();
-    //
-    // if (!user) {
-    //   // user isn't logged in
-    //   return this.transitionTo('login');
-    // }
-    //
-    // return user;
-  },
-
   model() {
     return animalId.getId();
   },
 
-  afterModel() {
+  redirect() {
+    let isAuthenticated = this.get('session.isAuthenticated');
+    if (!isAuthenticated) {
+      this.transitionTo('login');
+    }
+  },
 
+  actions: {
+    logout() {
+      this.get('session').invalidate();
+    }
   }
 });

@@ -32,16 +32,18 @@ export default Base.extend({
       });
     }
 
-    this.getCurrentUser().then((user) => {
-      localStorage.setItem(USER_ID_KEY, user.get('id'));
-      return resolve(user);
-    })
-    .catch(() => {
-      return this.createUser(name).then((user) => {
-        this.setCurrentUser(user);
-        resolve(user);
-      });
-    });
+    // shouldn't get here.
+    console.error('Tried authenticating already logged in user');
+    // return this.getCurrentUser().then((user) => {
+    //   localStorage.setItem(USER_ID_KEY, user.get('id'));
+    //   return resolve(user);
+    // })
+    // .catch(() => {
+    //   return this.createUser(name).then((user) => {
+    //     this.setCurrentUser(user);
+    //     resolve(user);
+    //   });
+    // });
   },
 
   invalidate() {
