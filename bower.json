@@ -1,9 +1,7 @@
 {
   "name": "cleaning-game",
   "dependencies": {
-    "firebase": "^3.0.0",
-    "hammer.js": "^2.0.8",
-    "matchMedia": "0.2.0"
+    "firebase": "^3.0.0"
   },
   "version": "0.0.0",
   "description": "Small description for cleaning-game goes here",
