@@ -1,0 +1,14 @@
+.cg-game-card {
+  md-card-title {
+    padding: 10px 16px 0;
+  }
+
+  md-card md-card-title md-card-title-text:only-child .md-subhead {
+    padding-top: 0;
+  }
+
+  md-card-actions {
+    border-top: 1px solid #e8e0e0;
+    padding-top: 8px;
+  }
+}

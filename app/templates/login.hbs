@@ -5,7 +5,7 @@
 
         <form {{action (route-action "login" name) on="submit"}}>
           <div class="layout-row">
-            <div class="layout-column flex-50">
+            <div class="layout-column flex-80">
               {{paper-input label="Välj ett namn" value=name onChange=(action (mut name)) required=true}}
             </div>
 

@@ -19,11 +19,5 @@ export default Route.extend(ApplicationRouteMixin, {
     if (!isAuthenticated) {
       this.transitionTo('login');
     }
-  },
-
-  actions: {
-    logout() {
-      this.get('session').invalidate();
-    }
   }
 });

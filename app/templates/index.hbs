@@ -1,4 +1,11 @@
-{{session.isAuthenticated}} <br>
-Welcome {{session.currentUser.name}}
+{{cg-toolbar title="Städspelet"}}
 
-{{outlet}}
+<div class="layout-row layout-xs-column">
+  <div class="layout-column flex-xs flex-gt-xs-50">
+    <h2 class="page-title">MINA SPEL</h2>
+    {{cg-game-card title="crazy cow" subtitle="Med Luigi"}}
+
+  </div>
+</div>
+
+{{cg-fab-button icon="add"}}

@@ -1,0 +1,20 @@
+.cg-toolbar {
+  .menu-item__logout i {
+    position: relative;
+    top: -4px;
+  }
+
+  .menu__current-user {
+    margin-right: -16px;
+    margin-top: 5px;
+
+    md-menu {
+      position: relative;
+      top: -2px;
+
+      .md-icon-button {
+        margin-left: 0px;
+      }
+    }
+  }
+}

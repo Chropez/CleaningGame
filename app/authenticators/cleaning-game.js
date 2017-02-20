@@ -49,6 +49,7 @@ export default Base.extend({
   invalidate() {
     // @todo remove user?
     localStorage.removeItem(USER_ID_KEY);
+    return resolve();
   },
 
   createUser(name) {

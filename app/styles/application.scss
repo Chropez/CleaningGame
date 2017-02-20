@@ -1,8 +1,15 @@
 body {
   background-color: $gray;
+  color: #2d2d2d;
 }
 
 .btn-inline {
   height: 40px;
   top: 7px;
+}
+
+.page-title {
+  margin: 15px 11px 0;
+  font-size: 16px;
+  color: #737373;
 }

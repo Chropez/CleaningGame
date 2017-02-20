@@ -1,0 +1,13 @@
+{{#paper-card as |card|}}
+  {{#card.title as |cardTitle|}}
+    {{#cardTitle.text as |text|}}
+      {{#text.headline}}{{title}}{{/text.headline}}
+      {{#text.subhead}}{{subtitle}}{{/text.subhead}}
+    {{/cardTitle.text}}
+  {{/card.title}}
+  {{#card.actions}}
+    {{#paper-button}}Visa{{/paper-button}}
+    {{#paper-button}}Ta bort{{/paper-button}}
+  {{/card.actions}}
+{{/paper-card}}
+{{yield}}

@@ -1,4 +1,9 @@
 @import 'variables';
 @import 'ember-paper';
-// @import 'modules';
- @import 'application';
+
+@import 'application';
+
+// components
+@import './components/cg-toolbar';
+@import './components/cg-game-card';
+@import './components/cg-fab-button';
