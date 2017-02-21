@@ -4,8 +4,10 @@
   right: 10px;
 
   md-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
     font-size: 30px;
-    top: -9px;
-    position: relative;
-  }  
+  }
 }

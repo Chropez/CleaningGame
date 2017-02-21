@@ -1,0 +1,9 @@
+{{cg-toolbar title="Städspelet" onBack=(route-action "onBack")}}
+
+{{model.id}}
+
+{{#each model.players as |player|}}
+  {{player.user.name}}
+{{/each}}
+
+{{outlet}}

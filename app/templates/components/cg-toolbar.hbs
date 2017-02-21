@@ -15,30 +15,31 @@
         {{session.currentUser.name}}
 
         {{#paper-menu as |menu|}}
-            {{#menu.trigger}}
-              {{#paper-button iconButton=true}}
-                {{paper-icon "more_vert"}}
-              {{/paper-button}}
-            {{/menu.trigger}}
+          {{#menu.trigger}}
+            {{#paper-button iconButton=true}}
+              {{paper-icon "more_vert"}}
+            {{/paper-button}}
+          {{/menu.trigger}}
 
-            {{#menu.content width=4 as |content|}}
-              {{#content.menu-item onClick=(action "changeName")}}
-                {{paper-icon "create"}}
-                <span>Ändra namn</span>
-              {{/content.menu-item}}
+          {{#menu.content width=4 as |content|}}
+            {{#content.menu-item onClick=(action "changeName")}}
+              {{paper-icon "create"}}
+              <span>Ändra namn</span>
+            {{/content.menu-item}}
 
-              {{paper-divider}}
-                <md-icon class="paper-icon md-font material-icons md-default-theme">
-                  {{#content.menu-item onClick=(action "logout") classNames="menu-item__logout"}}
-                  {{fa-icon "sign-out"}}
-                </md-icon>
-                <span>Logga ut</span>
-              {{/content.menu-item}}
+            {{paper-divider}}
 
-            {{/menu.content}}
-          {{/paper-menu}}
+            {{#content.menu-item onClick=(action "logout") classNames="menu-item__logout" }}
+              <md-icon class="paper-icon md-font material-icons md-default-theme">
+                {{fa-icon "sign-out"}}
+              </md-icon>
+              <span>Logga ut</span>
+            {{/content.menu-item}}
+
+          {{/menu.content}}
+        {{/paper-menu}}
       </div>
-      {{/if}}
+    {{/if}}
 
 
   {{/toolbar.tools}}
