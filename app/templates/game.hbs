@@ -1,9 +1,15 @@
-{{cg-toolbar title="Städspelet" onBack=(route-action "onBack")}}
-
-{{model.id}}
-
-{{#each model.players as |player|}}
-  {{player.user.name}}
-{{/each}}
+{{#cg-toolbar title="Städspelet" tall=true onBack=(route-action "onBack") classNames="cg-toolbar__game"}}
+  <ul class="toolbar-tabs">
+    {{#link-to "game.index" class="toolbar-tabs__item"}}
+      {{paper-icon "face" size=30}}
+    {{/link-to}}
+    {{#link-to "index" class="toolbar-tabs__item"}}
+      {{paper-icon "list" size=30}}
+    {{/link-to}}
+    {{#link-to "index" class="toolbar-tabs__item"}}
+      {{paper-icon "videogame asset" size=30}}
+    {{/link-to}}
+  </ul>
+{{/cg-toolbar}}
 
 {{outlet}}

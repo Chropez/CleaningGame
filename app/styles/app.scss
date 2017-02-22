@@ -1,7 +1,10 @@
 @import 'variables';
 @import 'ember-paper';
 
+// routes
 @import 'application';
+@import 'game';
+@import './game/index';
 
 // components
 @import './components/cg-toolbar';

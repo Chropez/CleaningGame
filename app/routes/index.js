@@ -15,9 +15,16 @@ export default Route.extend(AuthenticatedRouteMixin, {
   actions: {
     createNewGame(){
       this.get('gameService').createNewGame().then((game) => {
-        this.transitionTo('game', game);  
+        this.transitionTo('game', game);
       });
+    },
 
+    logout() {
+      this.get('session').invalidate();
+    },
+
+    changeName(/*newName*/) {
+      console.log('not implemented');
     }
   }
 });
