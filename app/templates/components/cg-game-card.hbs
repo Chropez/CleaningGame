@@ -1,13 +1,28 @@
 {{#paper-card as |card|}}
-  {{#card.title as |cardTitle|}}
-    {{#cardTitle.text as |text|}}
-      {{#text.headline}}{{title}}{{/text.headline}}
-      {{#text.subhead}}{{subtitle}}{{/text.subhead}}
-    {{/cardTitle.text}}
-  {{/card.title}}
+  {{#link-to 'game' game}}
+    {{#card.title as |cardTitle|}}
+      {{#cardTitle.text as |text|}}
+        {{#text.headline}}{{game.id}}{{/text.headline}}
+        {{#text.subhead}}
+          {{#unless hasOtherPlayers}}
+            Bara du i spelet.
+          {{else}}
+            Med
+            {{#each game.players as |player index|}}
+              {{#unless (eq player.user.id session.currentUser.id)}}
+                {{if index ", "}}
+                {{player.user.name}}
+              {{/unless}}
+            {{/each}}
+          {{/unless}}
+        {{/text.subhead}}
+      {{/cardTitle.text}}
+    {{/card.title}}
+  {{/link-to}}
+
   {{#card.actions}}
-    {{#paper-button}}Visa{{/paper-button}}
-    {{#paper-button}}Ta bort{{/paper-button}}
+    {{#paper-button iconButton=true}}{{paper-icon "share"}}{{/paper-button}}
+    {{#paper-button iconButton=true}}{{paper-icon "delete"}}{{/paper-button}}
   {{/card.actions}}
 {{/paper-card}}
 {{yield}}

@@ -17,11 +17,11 @@ $toolbar-item-color: #bcc4ef;
     flex: 1;
     display: flex;
     border-bottom: 4px solid transparent;
-  }
 
-  .toolbar-tabs__item md-icon {
-    color: $toolbar-item-color;
-    margin-bottom: 8px;
+    md-icon {
+      color: $toolbar-item-color;
+      margin-bottom: 8px;
+    }
   }
 
   .toolbar-tabs__item.active {

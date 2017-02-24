@@ -1,4 +1,9 @@
 .cg-game-card {
+  md-card a {
+    color: inherit;;
+    text-decoration: none;
+  }
+
   md-card-title {
     padding: 10px 16px 0;
   }

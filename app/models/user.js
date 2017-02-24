@@ -10,8 +10,9 @@ const {
 
 export default Model.extend({
   name: attr('string'),
+
   avatar: computed('name', function() {
     let encodedName = encodeURI(get(this, 'name'));
     return `https://api.adorable.io/avatars/70/${encodedName}`;
-  })
+  }),
 });

@@ -4,7 +4,8 @@
 // routes
 @import 'application';
 @import 'game';
-@import './game/index';
+@import './game/participants';
+// @import './game/index';
 
 // components
 @import './components/cg-toolbar';

@@ -19,11 +19,15 @@ export default Service.extend({
 
     let player = store.createRecord('player', { user });
     let game = store.createRecord('game', { id, state: GameState.New });
+    let userGame = store.createRecord('userGame', { user, game });
 
     game.get('players').pushObject(player);
 
     return player.save().then(() => {
-      return game.save();
+      return game.save().then(() => {
+        userGame.save();
+        return game;
+      });
     });
   },
 

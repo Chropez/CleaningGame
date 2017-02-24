@@ -8,8 +8,14 @@ const {
 
 export default Route.extend(AuthenticatedRouteMixin, {
   gameService: service(),
-  model() {
+  session: service(),
 
+  model() {
+    let userId = this.get('session.currentUser.id');
+    return this.store.query('userGame', {
+      orderBy: 'user',
+      equalTo: userId
+    });
   },
 
   actions: {

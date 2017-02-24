@@ -20,7 +20,10 @@ export default Base.extend({
 
     return this.getCurrentUser().then((user) => {
       this.setCurrentUser(user);
-      resolve(user);
+      return resolve(user);
+    }).catch(() => {
+      localStorage.removeItem(USER_ID_KEY);
+      return reject();
     });
   },
 

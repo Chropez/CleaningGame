@@ -1,13 +1,13 @@
-{{#cg-toolbar title="Städspelet" tall=true onBack=(route-action "onBack") classNames="cg-toolbar__game"}}
+{{#cg-toolbar title="Städspelet" tall=true onBack=(route-action "onBack") classNames="cg-toolbar__game" }}
   <ul class="toolbar-tabs">
-    {{#link-to "game.index" class="toolbar-tabs__item"}}
+    {{#link-to "game.index" class="toolbar-tabs__item" }}
+      {{paper-icon "videogame asset" size=30}}
+    {{/link-to}}
+    {{#link-to "game.participants" class="toolbar-tabs__item" }}
       {{paper-icon "face" size=30}}
     {{/link-to}}
-    {{#link-to "index" class="toolbar-tabs__item"}}
-      {{paper-icon "list" size=30}}
-    {{/link-to}}
-    {{#link-to "index" class="toolbar-tabs__item"}}
-      {{paper-icon "videogame asset" size=30}}
+    {{#link-to "index" class="toolbar-tabs__item" }}
+      {{paper-icon "settings" size=30}}
     {{/link-to}}
   </ul>
 {{/cg-toolbar}}
