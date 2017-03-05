@@ -35,7 +35,9 @@ export default Base.extend({
       });
     }
 
-    // shouldn't get here.
+    // shouldn't get here
+
+    // eslint-disable-next-line no-console
     console.error('Tried authenticating already logged in user');
     // return this.getCurrentUser().then((user) => {
     //   localStorage.setItem(USER_ID_KEY, user.get('id'));

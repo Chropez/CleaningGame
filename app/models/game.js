@@ -5,7 +5,16 @@ import { hasMany } from 'ember-data/relationships';
 export default Model.extend({
   players: hasMany(),
   state: attr('string'),
-  name: attr('string')
+  name: attr('string'),
+  hasUser(user) {
+    //let players = this.get('players');
+    let users = this.get('players').map((player) => {
+      return player.get('user');
+    });
+
+    let userId = user.get('id');
+    return users.findBy('id', userId) !== undefined;
+  }
 });
 
 /**

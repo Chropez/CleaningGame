@@ -2,10 +2,12 @@ import Ember from 'ember';
 
 const {
   Component,
-  computed: { not }
+  inject: { service }
 } = Ember;
 
 export default Component.extend({
-  classNames: 'cg-fab-button',
-  warn: not('secondary')
+  store: service(),
+  actions: {
+
+  }
 });

@@ -1,0 +1,35 @@
+{{#paper-dialog fullscreen=true onClose=(action onCloseDialog)}}
+
+  {{#paper-dialog-content classNames="join-game-dialog"}}
+    <h2 class="md-title">Gå med i ett spel</h2>
+    <p>Skriv namnet spelet som du vill gå med i.</p>
+
+    <form {{action onJoinGame game on="submit"}}>
+      {{paper-input
+          block=true
+          placeholder="Spelets namn"
+          required=true
+          errorMessages=(hash
+            required="Ange spelets namn"
+          )
+          autofocus=true
+          value=game
+          onChange=(action (mut game)) }}
+    </form>
+    {{#if showGameNotFoundError}}
+      <md-input-container class="md-input-invalid game-not-found-error">
+        <div ng-message class="paper-input-error">
+          Kunde inte hitta spelet. Kontrollera att namnet stämmer och försök igen.
+        </div>
+      </md-input-container>
+    {{/if}}
+  {{/paper-dialog-content}}
+
+  {{#paper-dialog-actions class="layout-row"}}
+    <span class="flex"></span>
+    {{#paper-button onClick=(action onCloseDialog)}}Avbryt{{/paper-button}}
+    {{#paper-button primary=true onClick=(action onJoinGame game)}}Gå med{{/paper-button}}
+  {{/paper-dialog-actions}}
+
+{{/paper-dialog}}
+

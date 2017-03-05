@@ -30,7 +30,19 @@ export default Route.extend(AuthenticatedRouteMixin, {
     },
 
     changeName(/*newName*/) {
+      // eslint-disable-next-line no-console
       console.log('not implemented');
+    },
+
+    joinGame(game) {
+      this.get('store').findRecord('game', game).then((gameRecord) => {
+        gameRecord.get('players').then(() => {
+          this.get('gameService').joinGame(gameRecord);
+          this.transitionTo('game', gameRecord);
+        })
+      }).catch(() => {
+        this.set('showGameNotFoundError', true);
+      })
     }
   }
 });
