@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import animalId from 'npm:animal-id';
-import GameState from '../models/game';
+import { GameState } from '../models/game';
 
 const {
   inject: { service },
@@ -19,6 +19,7 @@ export default Service.extend({
     let id = this.generateUniqueName();
 
     let player = store.createRecord('player', { user });
+
     let game = store.createRecord('game', { id, state: GameState.New });
     let userGame = store.createRecord('userGame', { user, game });
 
