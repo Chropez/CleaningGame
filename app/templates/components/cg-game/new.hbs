@@ -7,17 +7,16 @@
         För närvarande är det bara du i det här spelet.
       </p>
     {{/if}}
-    
+
     <p>
       Andra spelare kan gå med genom att söka på spelet som heter
       <strong>{{game.id}}</strong>.
-    </p>
-    <p>
-      Antal spelare: {{game.players.length}}
     </p>
 
     {{player-list players=game.players}}
   {{/card.content}}
 {{/paper-card}}
 
+{{#paper-button}}
+{{/paper-button}}
 {{yield}}

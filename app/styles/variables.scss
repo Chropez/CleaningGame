@@ -1,1 +1,22 @@
-$gray: #f3f3f3;
+// theming
+
+$primary: "cyan";
+$accent: "pink";
+$link: "light-blue";
+$light-contrast-color: white;
+$color-cyan: map-merge($color-cyan, ('contrast':  $light-contrast-color));
+$base-background-color: color($color-grey, '100');
+$base-color: #5d5c5c;
+
+// $primary-color-dark:   #0097A7
+// $primary-color:        #00BCD4
+// $primary-color-light:  #B2EBF2
+// $primary-color-text:   #FFFFFF
+// $accent-color:         #FF4081
+// $primary-text-color:   #212121
+// $secondary-text-color: #757575
+// $divider-color:        #BDBDBD
+
+// other colors
+
+

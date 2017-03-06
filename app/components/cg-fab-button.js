@@ -1,11 +1,9 @@
 import Ember from 'ember';
 
 const {
-  Component,
-  computed: { not }
+  Component
 } = Ember;
 
 export default Component.extend({
-  classNames: 'cg-fab-button',
-  warn: not('secondary')
+  classNames: 'cg-fab-button'
 });

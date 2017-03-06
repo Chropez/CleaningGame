@@ -41,8 +41,8 @@
   </div>
 </div>
 
-{{cg-fab-button icon="reply" secondary=true classNames="fab--join" onClick=(toggle "showJoinDialog" this)}}
-{{cg-fab-button icon="add" onClick=(route-action "createNewGame")}}
+{{cg-fab-button icon="reply" classNames="fab--join" onClick=(toggle "showJoinDialog" this)}}
+{{cg-fab-button icon="add"  accent=true onClick=(route-action "createNewGame")}}
 
 {{#if showJoinDialog}}
   {{index/join-game-dialog onJoinGame=(pipe (route-action "joinGame") (toggle "showJoinDialog" this)) onCloseDialog=(toggle-action "showJoinDialog" this)}}

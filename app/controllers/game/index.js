@@ -6,8 +6,8 @@ const {
 } = Ember;
 
 export default Controller.extend({
-  gameComponent: computed('model.state', function() {
-    let state = this.get('model.state');
+  gameComponent: computed('model.game.state', function() {
+    let state = this.get('model.game.state');
     return `cg-game/${state}`;
   })
 });

@@ -10,6 +10,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
     return this.store.findRecord('game', game_id);
   },
 
+  afterModel(game) {
+    return game.get('players');
+  },
+
   actions: {
     onBack() {
       this.transitionTo('index');
