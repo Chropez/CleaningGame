@@ -4,17 +4,7 @@
       {{#cardTitle.text as |text|}}
         {{#text.headline}}{{game.id}}{{/text.headline}}
         {{#text.subhead}}
-          {{#unless hasOtherPlayers}}
-            Bara du i spelet.
-          {{else}}
-            Med
-            {{#each game.players as |player index|}}
-              {{#unless (eq player.user.id session.currentUser.id)}}
-                {{if index ", "}}
-                {{player.user.name}}
-              {{/unless}}
-            {{/each}}
-          {{/unless}}
+          {{playersText}}
         {{/text.subhead}}
       {{/cardTitle.text}}
     {{/card.title}}

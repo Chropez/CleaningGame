@@ -1,22 +1,23 @@
 <h2 class="page-title">VÄLKOMMEN</h2>
 {{#paper-card as |card|}}
   {{#card.content}}
-
-    {{#if (lte game.players.length 1)}}
-      <p>
-        För närvarande är det bara du i det här spelet.
-      </p>
-    {{/if}}
-
     <p>
       Andra spelare kan gå med genom att söka på spelet som heter
       <strong>{{game.id}}</strong>.
     </p>
 
     {{player-list players=game.players}}
+
+    {{#if (lte game.players.length 1)}}
+      <p>
+        Ni måste vara minst 2 för att spela.
+      </p>
+    {{/if}}
+
+    {{#paper-button primary=true raised=true classNames="btn__start-playing"}}Börja spela!{{/paper-button}}
+
   {{/card.content}}
+
 {{/paper-card}}
 
-{{#paper-button}}
-{{/paper-button}}
 {{yield}}

@@ -7,10 +7,12 @@
 @import 'game';
 @import 'index';
 @import './game/participants';
-// @import './game/index';
 
 // components
 @import './components/cg-toolbar';
 @import './components/cg-game-card';
 @import './components/cg-fab-button';
+
 @import './components/index/join-game-dialog';
+
+@import './components/cg-game/new';

@@ -29,21 +29,18 @@
   {{/if}}
 {{/cg-toolbar}}
 
-<div class="layout-row layout-xs-column">
-  <div class="layout-column flex-xs flex-gt-xs-50">
-    <h2 class="page-title">MINA SPEL</h2>
+{{#site-content}}
+  <h2 class="page-title">MINA SPEL</h2>
 
-    {{#each model as |userGame|}}
-      {{cg-game-card game=userGame.game}}
-    {{/each}}
-    {{!-- {{cg-game-card title="crazy cow" subtitle="Med Luigi"}} --}}
+  {{#each model as |userGame|}}
+    {{cg-game-card game=userGame.game}}
+  {{/each}}
 
-  </div>
-</div>
+  {{!-- Bottom of page --}}
+  {{cg-fab-button icon="reply" classNames="fab--join" onClick=(toggle "showJoinDialog" this)}}
+  {{cg-fab-button icon="add"  accent=true onClick=(route-action "createNewGame")}}
 
-{{cg-fab-button icon="reply" classNames="fab--join" onClick=(toggle "showJoinDialog" this)}}
-{{cg-fab-button icon="add"  accent=true onClick=(route-action "createNewGame")}}
-
-{{#if showJoinDialog}}
-  {{index/join-game-dialog onJoinGame=(pipe (route-action "joinGame") (toggle "showJoinDialog" this)) onCloseDialog=(toggle-action "showJoinDialog" this)}}
-{{/if}}
+  {{#if showJoinDialog}}
+    {{index/join-game-dialog onJoinGame=(pipe (route-action "joinGame") (toggle "showJoinDialog" this)) onCloseDialog=(toggle-action "showJoinDialog" this)}}
+  {{/if}}
+{{/site-content}}

@@ -5,5 +5,5 @@ const {
 } = Ember;
 
 export default Component.extend({
-  classNames: 'cg-game-new'
+  tagName: ''
 });

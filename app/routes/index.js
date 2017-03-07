@@ -2,8 +2,9 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 const {
-  Route,
-  inject: { service }
+  inject: { service },
+  RSVP: { all } ,
+  Route
 } = Ember;
 
 export default Route.extend(AuthenticatedRouteMixin, {
@@ -16,6 +17,19 @@ export default Route.extend(AuthenticatedRouteMixin, {
       orderBy: 'user',
       equalTo: userId
     });
+  },
+
+  afterModel(userGames) {
+    let gamePromises = userGames.map((userGame) => {
+      return userGame.get('game').then((game) => {
+        return game.get('players').then((players) => {
+          return all(players.map((player) => {
+            return player.get('user');
+          }));
+        });
+      });
+    });
+    return all(gamePromises);
   },
 
   actions: {
