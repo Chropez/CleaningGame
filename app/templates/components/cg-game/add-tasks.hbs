@@ -1,0 +1,56 @@
+<h2 class="page-title">Städuppgifter</h2>
+{{#paper-card as |card|}}
+  {{#card.content}}
+
+    {{#paper-list}}
+      {{#each game.tasks as |task index|}}
+        {{#paper-item as |controls|}}
+          <span class="task-number">{{inc index 1}}.</span>
+          <p>
+            {{task.name}}
+          </p>
+
+          {{#paper-menu as |menu|}}
+            {{#menu.trigger}}
+              {{#paper-button iconButton=true}}
+                {{paper-icon "more_vert"}}
+              {{/paper-button}}
+            {{/menu.trigger}}
+
+            {{#menu.content width=3 as |content|}}
+              {{#content.menu-item onClick=(action "addTask")}}
+                {{paper-icon "create"}}
+                <span>Ändra</span>
+              {{/content.menu-item}}
+
+              {{#content.menu-item onClick=(action "remove" task) }}
+                {{paper-icon "delete"}}
+                <span>Ta bort</span>
+              {{/content.menu-item}}
+
+            {{/menu.content}}
+          {{/paper-menu}}
+
+        {{/paper-item}}
+      {{/each}}
+    {{/paper-list}}
+
+    <form {{action (action "addTask" taskName) on="submit"}}>
+      <div class="layout-row">
+        <div class="layout-column flex-80">
+          {{paper-input label="Lägg till städuppgift" value=taskName onChange=(action (mut taskName))}}
+        </div>
+
+        {{#paper-button iconButton=true raised=true primary=true type="submit" class="btn-inline btn__add-task"}}
+          {{paper-icon "done"}}
+        {{/paper-button}}
+      </div>
+    </form>
+
+    {{#paper-button primary=true disabled=showNext raised=true classNames="btn__full-width" onClick=(action "next")}}
+      Fortsätt
+    {{/paper-button}}
+  {{/card.content}}
+{{/paper-card}}
+
+{{yield}}

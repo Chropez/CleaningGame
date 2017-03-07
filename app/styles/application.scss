@@ -1,6 +1,9 @@
 body {
-  background-color: $base-background-color;
   color: $base-color;
+}
+
+body, md-content.main-content{
+  background-color: $base-background-color;
 }
 
 .btn-inline {
@@ -20,4 +23,9 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.btn__full-width {
+  margin: 0;
+  width: 100%;
 }

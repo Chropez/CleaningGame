@@ -19,8 +19,8 @@ export default Service.extend({
     let id = this.generateUniqueName();
 
 
-    let game = store.createRecord('game', { id, state: GameState.New });
-    let player = store.createRecord('player', { user, game });
+    let game = store.createRecord('game', { id, state: GameState.New, name :'new game' });
+    let player = store.createRecord('player', { user, game, order: 1 });
     let userGame = store.createRecord('userGame', { user, game });
 
     game.get('players').pushObject(player);
@@ -41,7 +41,9 @@ export default Service.extend({
 
     let store = this.get('store');
     let players = game.get('players');
-    let newPlayer = store.createRecord('player', { user, game });
+    let order = players.get('length') + 1;
+
+    let newPlayer = store.createRecord('player', { user, game, order });
     players.pushObject(newPlayer);
 
     let userGame = store.createRecord('userGame', { user, game });

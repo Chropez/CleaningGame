@@ -6,6 +6,8 @@ export default Model.extend({
   players: hasMany(),
   state: attr('string'),
   name: attr('string'),
+  tasks: hasMany(),
+
   hasUser(user) {
     //let players = this.get('players');
     let users = this.get('players').map((player) => {
@@ -32,10 +34,11 @@ export default Model.extend({
  */
 export let GameState = {
   New: "new",
-  Estimating: "estimating",
-  ChoosingOrder: "choosing-order",
-  ChoosingTasks: "choosing-tasks",
-  Trading: "trading",
-  Cleaning: "cleaning",
-  Finished: "finished"
+  AddingTasks: "add-tasks",
+  Estimating: "estimate",
+  ChoosingOrder: "choose-order",
+  ChoosingTasks: "choose-tasks",
+  Trading: "trade",
+  Cleaning: "clean",
+  Finished: "finish"
 };

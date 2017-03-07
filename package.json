@@ -48,7 +48,7 @@
     "ember-simple-auth": "1.1.0",
     "ember-source": "~2.11.0",
     "ember-truth-helpers": "1.2.0",
-    "emberfire": "2.0.4",
+    "emberfire": "2.0.6",
     "eslint-plugin-ember-suave": "^1.0.0",
     "loader.js": "^4.0.10"
   },

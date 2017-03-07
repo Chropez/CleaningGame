@@ -3,7 +3,7 @@ import { belongsTo } from 'ember-data/relationships';
 import attr from 'ember-data/attr';
 
 export default Model.extend({
+  name: attr('string'),
   user: belongsTo(),
-  game: belongsTo(),
-  order: attr('number')
+  game: belongsTo()
 });
