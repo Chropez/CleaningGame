@@ -1,0 +1,51 @@
+<h2 class="page-title">Betygsätt uppgifterna</h2>
+{{#paper-card as |card|}}
+  {{#card.content}}
+    {{#if currentPlayer.isDoneEstimating}}
+
+      {{#paper-list}}
+        {{#each game.players as |player|}}
+          {{#paper-item}}
+            <img src={{player.user.avatar}} alt={{player.user.name}} class="md-avatar">
+            <div class="md-list-item-text">
+              {{player.user.name}}
+            </div>
+            <div class="md-list-item-estimate-status">
+              {{#if player.isDoneEstimating}}
+                {{paper-icon "done" classNames="status--done"}}
+              {{else}}
+                Väntar...
+              {{/if}}
+            </div>
+          {{/paper-item}}
+        {{/each}}
+      {{/paper-list}}
+
+      {{#paper-button
+        primary=true
+        disabled=disableNext
+        raised=true
+        classNames="btn__full-width"
+        onClick=(action "next")}}
+        Fortsätt
+      {{/paper-button}}
+    {{else}}
+      <p>
+        Sätt ett betyg på hur jobbiga uppgifterna är. <br>
+        1 är lättast och 5 är jobbigast.
+      </p>
+
+      {{#each game.tasks as |task|}}
+        {{cg-game/estimate/task-estimate game=game task=task player=currentPlayer}}
+      {{/each}}
+
+      {{#paper-button primary=true disabled=disableDoneEstimating raised=true classNames="btn__full-width" onClick=(action "doneEstimating")}}
+        Fortsätt
+        {{#if disableDoneEstimating}}
+          {{currentPlayer.playerTasks.length}}/{{game.tasks.length}}
+        {{/if}}
+      {{/paper-button}}
+
+    {{/if}}
+  {{/card.content}}
+{{/paper-card}}

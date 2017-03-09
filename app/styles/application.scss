@@ -1,9 +1,8 @@
-body {
-  color: $base-color;
-}
-
 body, md-content.main-content{
   background-color: $base-background-color;
+  color: $base-color;
+  line-height: 20px;
+  font-size: 14px;
 }
 
 .btn-inline {

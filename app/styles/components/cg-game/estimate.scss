@@ -1,0 +1,12 @@
+.cg-game-estimate {
+  .md-list-item-estimate-status {
+    position: absolute;
+    right: 0;
+    width: 55px;
+    text-align: center;
+
+    .status--done {
+      color: green;
+    }
+  }
+}

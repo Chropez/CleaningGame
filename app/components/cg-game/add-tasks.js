@@ -34,11 +34,12 @@ export default Component.extend({
     next() {
       let game = this.get('game');
       game.set('state', GameState.Estimating);
-      //game.save();
+      game.save();
     },
 
     changeName() {
-
+      /* eslint-disable no-console */
+      console.error('Change name not implemented yet');
     },
 
     remove(task) {

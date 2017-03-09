@@ -23,6 +23,10 @@ export default Route.extend({
       this.store.query('task', {
         orderBy: 'game',
         equalTo: model.get('id')
+      }),
+      this.store.query('playerTask', {
+        orderBy: 'game',
+        equalTo: model.get('id')
       })
     ]);
   }

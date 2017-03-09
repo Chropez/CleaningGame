@@ -16,6 +16,10 @@ export default Model.extend({
 
     let userId = user.get('id');
     return users.findBy('id', userId) !== undefined;
+  },
+
+  getPlayer(user) {
+    return this.get('players').findBy('user.id', user.get('id'));
   }
 });
 
