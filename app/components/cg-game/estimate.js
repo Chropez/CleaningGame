@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import { GameState } from 'cleaning-game/models/game';
 
 const {
   Component,
