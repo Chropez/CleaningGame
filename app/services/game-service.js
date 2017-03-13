@@ -56,5 +56,25 @@ export default Service.extend({
 
   generateUniqueName() {
    return animalId.getId(); //@todo make sure this is unique
+  },
+
+  setTaskAverageEstimate(game) {
+    let players = game.get('players.length');
+    return game.get('tasks').map((task) => {
+      let playerTasksEstimate = this.getPlayerTasks(game, task).map((playerTask) => {
+        return playerTask.get('estimate');
+      }).reduce((a, b) => { return a + b });
+
+      task.set('averageEstimate', playerTasksEstimate / players);
+      return task.save();
+    });
+  },
+
+  getPlayerTasks(game, task) {
+    let players = game.get('players');
+    let taskId = task.get('id');
+    return players.map((player) => {
+      return player.get('playerTasks').findBy('task.id', taskId);
+    });
   }
 });

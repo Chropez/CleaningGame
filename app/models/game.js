@@ -40,6 +40,7 @@ export let GameState = {
   New: "new",
   AddingTasks: "add-tasks",
   Estimating: "estimate",
+  ViewingEstimateResult: "view-estimate-result",
   ChoosingOrder: "choose-order",
   ChoosingTasks: "choose-tasks",
   Trading: "trade",

@@ -8,18 +8,16 @@
 
     {{player-list players=game.players}}
 
-    {{#if (lte game.players.length 1)}}
+    {{#if hasTooFewPlayers}}
       <p>
         Ni måste vara minst 2 för att spela.
       </p>
     {{/if}}
 
-    {{#paper-button primary=true raised=true classNames="btn__full-width" onClick=(action "startPlaying")}}
+    {{#paper-button primary=true raised=true disabled=hasTooFewPlayers classNames="btn__full-width" onClick=(action "startPlaying")}}
       Börja spela!
     {{/paper-button}}
 
   {{/card.content}}
 
 {{/paper-card}}
-
-{{yield}}

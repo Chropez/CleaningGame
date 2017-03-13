@@ -1,0 +1,39 @@
+<h2 class="page-title">Resultat</h2>
+{{#paper-card as |card|}}
+  {{#card.content}}
+    {{#each game.tasks as |task|}}
+      {{#paper-item}}
+        {{!--<img src={{player.user.avatar}} alt={{player.user.name}} class="md-avatar">--}}
+        <div class="md-list-item-text">
+          <div class="task-name">
+            {{task.name}}
+          </div>
+          <div class="task-estimates">
+
+          </div>
+        </div>
+        <div class="md-list-item-right">
+          {{task.averageEstimate}}
+        </div>
+      {{/paper-item}}
+    {{/each}}
+
+    {{paper-divider}}
+
+    {{#paper-item}}
+        {{!--<img src={{player.user.avatar}} alt={{player.user.name}} class="md-avatar">--}}
+        <div class="md-list-item-text">
+          <div class="task-name">
+            Totalt
+          </div>
+        </div>
+        <div class="md-list-item-right">
+          {{estimateSum}}
+        </div>
+      {{/paper-item}}
+
+    {{#paper-button primary=true raised=true classNames="btn__full-width" onClick=(action "next")}}
+      Fortsätt
+    {{/paper-button}}
+  {{/card.content}}
+{{/paper-card}}

@@ -28,3 +28,10 @@ body, md-content.main-content{
   margin: 0;
   width: 100%;
 }
+
+.md-list-item-right {
+  position: absolute;
+  right: 0;
+  width: 55px;
+  text-align: center;
+}

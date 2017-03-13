@@ -1,1 +1,38 @@
+<h2 class="page-title">Vem börjar välja?</h2>
+{{#paper-card as |card|}}
+  {{#card.content}}
+    <p>
+      Välj vilken ordning som spelarna ska välja städuppgifter.
+    </p>
+    {{#paper-list}}
+      {{#each players as |player|}}
+        {{#paper-item}}
+          <div class="list-item__order">
+            {{player.order}}
+          </div>
+          <img src={{player.user.avatar}} alt={{player.user.name}} class="md-avatar">
+          <div class="md-list-item-text">
+            {{player.user.name}}
+          </div>
+          <div class="md-list-item-right btn__arrows">
+            {{#paper-button iconButton=true disabled=(eq player.order 1) onClick=(action "moveOrderDown" player)}}
+              {{paper-icon "keyboard arrow up"}}
+            {{/paper-button}}
+            {{#paper-button iconButton=true disabled=(eq player.order players.length) onClick=(action "moveOrderUp" player)}}
+              {{paper-icon "keyboard arrow down"}}
+            {{/paper-button}}
+          </div>
+        {{/paper-item}}
+        {{#unless (eq player.order players.length)}}
+          {{paper-divider}}
+        {{/unless}}
+      {{/each}}
+    {{/paper-list}}
+
+    {{#paper-button primary=true disabled=showNext raised=true classNames="btn__full-width" onClick=(action "next")}}
+      Fortsätt
+    {{/paper-button}}
+  {{/card.content}}
+{{/paper-card}}
+
 {{yield}}

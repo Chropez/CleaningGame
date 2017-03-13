@@ -6,5 +6,5 @@ export default Model.extend({
   name: attr('string'),
   user: belongsTo(),
   game: belongsTo(),
-  estimate: attr('number')
+  averageEstimate: attr('number')
 });

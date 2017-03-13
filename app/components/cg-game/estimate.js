@@ -28,18 +28,12 @@ export default Component.extend({
     return playerTasks !== tasks;
   }),
 
-  disableNext: computed('game.players.@each.isDoneEstimating', function() {
+  allPlayersDoneEstimating: computed('game.players.@each.isDoneEstimating', function() {
     let playersNotDone = this.get('game.players').filterBy('isDoneEstimating', false);
-    return playersNotDone.get('length') !== 0;
+    return playersNotDone.get('length') === 0;
   }),
 
   actions: {
-    next() {
-      let game = this.get('game');
-      game.set('state', GameState.ChoosingOrder);
-      game.save();
-    },
-
     doneEstimating() {
       let currentPlayer = this.get('currentPlayer');
       currentPlayer.set('isDoneEstimating', true);
