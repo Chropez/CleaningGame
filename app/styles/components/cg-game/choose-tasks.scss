@@ -1,0 +1,36 @@
+.cg-game-choose-tasks {
+  md-card.active {
+    border: 4px solid #00bcd4;
+  }
+
+  md-card-title {
+    padding: 0 16px;
+  }
+
+  .md-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 16px;
+    border-radius: 50%;
+    box-sizing: content-box;
+  }
+
+  .md-list-item-text {
+    font-size: 16px;
+    margin-top: 22px;
+  }
+
+  .user-turn__status--choosing {
+    font-size: 14px;
+    width: 90px;
+    margin-top: 22px;
+    right: 5px;
+  }
+
+  .player-card .player-task{
+    margin-bottom: 5px;
+  }
+}

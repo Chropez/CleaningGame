@@ -4,7 +4,11 @@ import attr from 'ember-data/attr';
 
 export default Model.extend({
   name: attr('string'),
-  user: belongsTo(),
+
+  // needed for filtering
   game: belongsTo(),
-  averageEstimate: attr('number')
+  averageEstimate: attr('number'),
+
+  // when a player is assigned to clean a task
+  assignee: belongsTo('player')
 });

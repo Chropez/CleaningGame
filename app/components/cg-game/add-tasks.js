@@ -20,9 +20,8 @@ export default Component.extend({
         return;
       }
 
-      let user = this.get('session.currentUser');
       let game = this.get('game');
-      let task = this.get('store').createRecord('task', { name: taskName, user, game });
+      let task = this.get('store').createRecord('task', { name: taskName, game });
       game.get('tasks').pushObject(task);
       task.save().then(() => {
         game.save();

@@ -1,0 +1,44 @@
+<h2 class="page-title">Välj uppgifter</h2>
+{{#if isMyTurn}}
+
+  {{#paper-card as |card|}}
+    {{#card.content class="no-padding"}}
+      {{#paper-list}}
+        {{#paper-subheader}}Din tur att välja{{/paper-subheader}}
+
+        {{#each unassignedTasks as |task|}}
+          {{#paper-item onClick=(action "chooseTask" task) as |controls|}}
+            <div class="layout-row" style="width:100%">
+              <div class="flex-90">{{task.name}}</div>
+              <div class="flex">{{task.averageEstimate}}</div>
+            </div>
+          {{/paper-item}}
+          {{paper-divider}}
+        {{/each}}
+
+      {{/paper-list}}
+
+    {{/card.content}}
+  {{/paper-card}}
+
+{{else}}
+
+  {{#if allTasksAssigned}}
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <p>Alla uppgifter har tilldelats!</p>
+        {{#paper-button primary=true disabled=showNext raised=true classNames="btn__full-width" onClick=(action "next")}}
+          Börja städa
+        {{/paper-button}}
+      {{/card.content}}
+    {{/paper-card}}
+  {{/if}}
+
+  {{#each players as |player|}}
+    {{cg-game/choose-tasks/player-card
+        player=player
+        tasks=game.tasks
+        playerTurn=playerTurn}}
+  {{/each}}
+
+{{/if}}
