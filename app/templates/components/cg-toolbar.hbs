@@ -6,7 +6,12 @@
       {{/paper-button}}
     {{/if}}
 
-    <h2>{{title}}</h2>
+    <div class="{{if subTitle "toolbar-title__2-rows" ""}}">
+      <h2>{{title}}</h2>
+      {{#if subTitle}}
+        <h3>{{subTitle}}</h3>
+      {{/if}}
+    </div>
 
     <span class="flex"></span>
     {{yield}}

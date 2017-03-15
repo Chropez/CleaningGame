@@ -1,0 +1,18 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "userGames": {
+      ".indexOn": "user"
+    },
+    "players": {
+      ".indexOn": "game"
+    },
+    "tasks": {
+      ".indexOn": "game"
+    },
+    "playerTasks": {
+      ".indexOn": "game"
+    }
+  }
+}

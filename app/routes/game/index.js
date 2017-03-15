@@ -9,9 +9,8 @@ const {
 export default Route.extend({
   session: service(),
 
-  model(params, transition) {
-    let gameId = transition.params['game'].game_id;
-    return this.store.findRecord('game', gameId);
+  model() {
+    return this.modelFor('game');
   },
 
   afterModel(model) {

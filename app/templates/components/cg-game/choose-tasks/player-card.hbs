@@ -1,39 +1,41 @@
-{{#paper-card classNames=(if (eq player.user.id playerTurn.user.id) "active") as |card|}}
+{{#paper-card class=(if isActive "active" "") as |card|}}
   {{#card.title}}
     <img src={{player.user.avatar}} alt={{player.user.name}} class="md-avatar">
     <div class="md-list-item-text">
       {{player.user.name}}
     </div>
+
     {{#if (eq player.user.id playerTurn.user.id)}}
       <div class="md-list-item-right user-turn__status--choosing">
         väljer...
       </div>
     {{/if}}
+
   {{/card.title}}
   {{#card.content}}
     {{paper-divider}}
-    <p>
-      <strong>Städuppgifter</strong>
-    </p>
 
-    {{#each playerTasks as |task|}}
-      <div class="layout-row player-task">
-        <div class="flex-90">
-          {{task.name}}
+    <div class="player-card__tasks">
+      {{#each playerTasks as |task|}}
+        <div class="layout-row player-task">
+          <div class="flex-90">
+            {{task.name}}
+          </div>
+          <div class="flex">
+            {{task.averageEstimate}}
+          </div>
         </div>
-        <div class="flex">
-          {{task.averageEstimate}}
-        </div>
-      </div>
 
-    {{else}}
-      <p>
-        Har inte valt något än
-      </p>
-    {{/each}}
+      {{else}}
+        <p>
+          Har inte valt något än
+        </p>
+      {{/each}}
+    </div>
 
     {{#if (gt playerTasks.length 0)}}
       {{paper-divider}}
+
       <div class="layout-row">
         <div class="flex-90">
           <strong>Totalt</strong>

@@ -18,11 +18,19 @@
     }
   }
 
+  // when using tabs in toolbar
   .md-toolbar-tools {
     flex-wrap: wrap;
+    font-weight: 500;
   }
 
-  .md-toolbar-tools {
-    font-weight: 500;
+  .toolbar-title__2-rows {
+    h2 {
+      font-size: 18px;
+      margin-top: 4px;
+    }
+    h3 {
+      font-size: 13px;
+    }
   }
 }

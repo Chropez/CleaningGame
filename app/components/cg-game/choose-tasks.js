@@ -10,7 +10,6 @@ const {
   },
   inject: { service },
   isEmpty
-
 } = Ember;
 
 export default Component.extend({
@@ -34,7 +33,7 @@ export default Component.extend({
 
   allTasksAssigned: equal('unassignedTasks.length', 0),
 
-  orderTurn: computed('game.players.@each.order', 'unassignedTasks', function() {
+  orderTurn: computed('game.players.@each.order', 'unassignedTasks.@each.id', function() {
     let game = this.get('game');
     let players = game.get('players.length');
     let totalTasks = game.get('tasks.length');
@@ -44,16 +43,22 @@ export default Component.extend({
 
   playerTurn: computed('orderTurn', 'allTasksAssigned', function() {
     if (this.get('allTasksAssigned')) {
-      return;
+      return null;
     }
     let orderTurn = this.get('orderTurn');
     return this.get('game.players').findBy('order', orderTurn);
   }),
 
-  isMyTurn: computed('playerTurn.id', 'allTasksAssigned', 'currentPlayer.id', function() {
+  isMyTurn: computed('playerTurn', 'playerTurn.id', 'allTasksAssigned', 'currentPlayer.id', function() {
     let allTasksAssigned = this.get('allTasksAssigned');
     return this.get('currentPlayer.id') === this.get('playerTurn.id') && !allTasksAssigned;
   }),
+
+  // onIsMyTurn: observer('isMyTurn', function() {
+  //   if (this.get('isMyTurn')) {
+  //     window.scrollTo(0, 0);
+  //   }
+  // }),
 
   actions: {
     next() {
@@ -65,6 +70,7 @@ export default Component.extend({
     chooseTask(task) {
       let currentPlayer = this.get('currentPlayer');
       task.set('assignee', currentPlayer);
+      this.set('showPlayersWhenChoosing', false);
       task.save();
     }
   }

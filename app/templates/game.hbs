@@ -1,5 +1,5 @@
-{{#cg-toolbar title="Städspelet" tall=true onBack=(route-action "onBack") classNames="cg-toolbar__game" }}
-  <ul class="toolbar-tabs">
+{{#cg-toolbar title=model.id subTitle="Städspel" onBack=(route-action "onBack") classNames="cg-toolbar__game" }}
+  {{!--<ul class="toolbar-tabs">
     {{#link-to "game.index" class="toolbar-tabs__item" }}
       {{paper-icon "videogame asset" size=30}}
     {{/link-to}}
@@ -9,7 +9,7 @@
     {{#link-to "index" class="toolbar-tabs__item" }}
       {{paper-icon "settings" size=30}}
     {{/link-to}}
-  </ul>
+  </ul>--}}
 {{/cg-toolbar}}
 
 {{#site-content}}

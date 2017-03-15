@@ -11,10 +11,12 @@ const {
 
 export default Component.extend({
   classNames: 'player-card',
-  playerAssignees: mapBy('tasks', 'assignee'),
-  playerTasks: computed('playerAssignees.@each.id', 'tasks.@each.id', 'player.id', function() {
+  playerTasks: computed('tasks.@each.assigneeId', 'tasks.@each.id', 'player.id', function() {
     return this.get('tasks').filterBy('assignee.id', this.get('player.id'));
   }),
   playerTasksEstimate: mapBy('playerTasks', 'averageEstimate'),
-  total: sum('playerTasksEstimate')
+  total: sum('playerTasksEstimate'),
+  isActive: computed('player.id', 'playerTurn.id', function() {
+    return this.get('player.id') === this.get('playerTurn.id');
+  })
 });
