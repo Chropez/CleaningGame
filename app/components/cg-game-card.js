@@ -64,11 +64,5 @@ export default Component.extend({
 
   linkUrl: computed('game.id', function() {
     return `${window.location.href}${this.get('game.id')}`;
-  }),
-
-  actions: {
-    shareGame() {
-      this.toggleProperty('showShareDialog');
-    }
-  }
+  })
 });

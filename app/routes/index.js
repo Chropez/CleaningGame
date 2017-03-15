@@ -57,6 +57,23 @@ export default Route.extend(AuthenticatedRouteMixin, {
       }).catch(() => {
         this.set('showGameNotFoundError', true);
       })
+    },
+
+    onDelete(game) {
+      let id = game.get('id');
+
+      let userGames = this.store.query('userGame', {
+        orderBy: 'game',
+        equalTo: id
+      }).then((userGames) => {
+        userGames.forEach((userGame) => {
+          userGame.destroyRecord();
+        });
+      });
+
+
+      //todo remove all dependencies
+
     }
   }
 });

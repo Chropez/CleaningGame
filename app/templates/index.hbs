@@ -33,7 +33,7 @@
   <h2 class="page-title">MINA SPEL</h2>
 
   {{#each model as |userGame|}}
-    {{cg-game-card game=userGame.game}}
+    {{cg-game-card game=userGame.game onDelete=(route-action "onDelete")}}
   {{/each}}
 
   {{!-- Bottom of page --}}

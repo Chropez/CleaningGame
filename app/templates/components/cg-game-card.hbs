@@ -11,8 +11,8 @@
   {{/link-to}}
 
   {{#card.actions}}
-    {{#paper-button iconButton=true onClick=(action "shareGame")}}{{paper-icon "share"}}{{/paper-button}}
-    {{#paper-button iconButton=true}}{{paper-icon "delete"}}{{/paper-button}}
+    {{#paper-button iconButton=true onClick=(toggle-action "showShareDialog" this)}}{{paper-icon "share"}}{{/paper-button}}
+    {{#paper-button iconButton=true onClick=(action onDelete game)}}{{paper-icon "delete"}}{{/paper-button}}
   {{/card.actions}}
 {{/paper-card}}
 
