@@ -39,3 +39,8 @@ body, md-content.main-content{
 .no-padding {
   padding: 0;
 }
+
+a, a:active, a:visited {
+  color: color($primary, '700');
+  text-decoration: none;
+}
