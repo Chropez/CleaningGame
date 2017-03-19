@@ -48,21 +48,15 @@ export default Route.extend(AuthenticatedRouteMixin, {
       console.log('not implemented');
     },
 
-    joinGame(game) {
-      this.get('store').findRecord('game', game).then((gameRecord) => {
-        gameRecord.get('players').then(() => {
-          this.get('gameService').joinGame(gameRecord);
-          this.transitionTo('game', gameRecord);
-        })
-      }).catch(() => {
-        this.set('showGameNotFoundError', true);
-      })
+    joinGame(gameRecord) {
+      this.get('gameService').joinGame(gameRecord);
+      this.transitionTo('game', gameRecord);
     },
 
-    onDelete(game) {
+    onDelete(game) {
       let id = game.get('id');
 
-      let userGames = this.store.query('userGame', {
+      return this.store.query('userGame', {
         orderBy: 'game',
         equalTo: id
       }).then((userGames) => {
@@ -71,9 +65,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
         });
       });
 
-
       //todo remove all dependencies
-
     }
   }
 });

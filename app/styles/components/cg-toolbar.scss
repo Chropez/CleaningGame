@@ -4,20 +4,6 @@
     top: -4px;
   }
 
-  .menu__current-user {
-    margin-right: -16px;
-    margin-top: 5px;
-
-    md-menu {
-      position: relative;
-      top: -2px;
-
-      .md-icon-button {
-        margin-left: 0px;
-      }
-    }
-  }
-
   // when using tabs in toolbar
   .md-toolbar-tools {
     flex-wrap: wrap;
@@ -32,5 +18,17 @@
     h3 {
       font-size: 13px;
     }
+  }
+
+  .cg-toolbar__right-buttons {
+    position: relative;
+    right: -10px;
+
+    .md-button {
+      margin: 0;
+      padding: 0;
+      width: 25px;
+    }
+
   }
 }

@@ -19,7 +19,7 @@
     {{#if showGameNotFoundError}}
       <md-input-container class="md-input-invalid game-not-found-error">
         <div ng-message class="paper-input-error">
-          Kunde inte hitta spelet. Kontrollera att namnet stämmer och försök igen.
+          Kunde inte hitta spelet. Se till att namnet på spelet heter exakt som du har skrivit och försök igen.
         </div>
       </md-input-container>
     {{/if}}
@@ -28,7 +28,7 @@
   {{#paper-dialog-actions class="layout-row"}}
     <span class="flex"></span>
     {{#paper-button onClick=(action onCloseDialog)}}Avbryt{{/paper-button}}
-    {{#paper-button primary=true onClick=(action onJoinGame game)}}Gå med{{/paper-button}}
+    {{#paper-button primary=true onClick=(action "joinGame" game)}}Gå med{{/paper-button}}
   {{/paper-dialog-actions}}
 
 {{/paper-dialog}}

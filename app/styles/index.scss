@@ -2,3 +2,48 @@
   bottom: 78px;
   transform: rotateY(180deg);
 }
+
+.toolbar__index {
+  .md-toolbar-tools h2{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+  }
+
+  .btn__search {
+    margin: 0;
+    padding: 0;
+  }
+
+  .welcome-banner {
+    width:100%;
+
+    .primary-text {
+      margin-top: 28px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    .toolbar__avatar {
+      position: absolute;
+      bottom: -30px;
+      width: 100%;
+      left: 0;
+    }
+
+    .toolbar__avatar img {
+      border-radius: 50px;
+      height: 65px;
+      width: 65px;
+      border: 2px solid $base-background-color;
+    }
+  }
+}
+
+.site-content__index {
+  padding-bottom: 65px;
+}

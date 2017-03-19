@@ -1,7 +1,9 @@
-{{#cg-toolbar title="Städspelet"}}
+{{#cg-toolbar title="Städspelet" tall=true class="toolbar__index"}}
   {{#if session.isAuthenticated}}
-    <div class="menu__current-user">
-      {{session.currentUser.name}}
+    <div class="cg-toolbar__right-buttons">
+      {{#paper-button class="btn__search" iconButton=true onClick=(toggle "showJoinDialog" this)}}
+        {{paper-icon "search"}}
+      {{/paper-button}}
 
       {{#paper-menu as |menu|}}
         {{#menu.trigger}}
@@ -11,7 +13,7 @@
         {{/menu.trigger}}
 
         {{#menu.content width=4 as |content|}}
-          {{#content.menu-item onClick=(route-action "changeName")}}
+          {{#content.menu-item disabled=true onClick=(route-action "changeName")}}
             {{paper-icon "create"}}
             <span>Ändra namn</span>
           {{/content.menu-item}}
@@ -27,9 +29,21 @@
       {{/paper-menu}}
     </div>
   {{/if}}
+
+  <div class="welcome-banner">
+    <div class="toolbar__text layout-row layout-align-center-end">
+      {{!--<div class="secondary-text">Välkommen</div>--}}
+      <div class="primary-text">
+        {{session.currentUser.name}}
+      </div>
+    </div>
+    <div class="toolbar__avatar layout-row layout-align-center">
+      <img src={{session.currentUser.avatar}} alt={{session.currentUser.avatar}} class="">
+    </div>
+  </div>
 {{/cg-toolbar}}
 
-{{#site-content}}
+{{#site-content classNames="site-content__index"}}
   <h2 class="page-title">MINA SPEL</h2>
 
   {{#each model as |userGame|}}
@@ -37,7 +51,7 @@
   {{/each}}
 
   {{!-- Bottom of page --}}
-  {{cg-fab-button icon="reply" classNames="fab--join" onClick=(toggle "showJoinDialog" this)}}
+  {{!--{{cg-fab-button icon="reply" classNames="fab--join" onClick=(toggle "showJoinDialog" this)}}--}}
   {{cg-fab-button icon="add"  accent=true onClick=(route-action "createNewGame")}}
 
   {{#if showJoinDialog}}
