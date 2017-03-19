@@ -10,27 +10,9 @@
             {{task.name}}
           </p>
 
-          {{#paper-menu as |menu|}}
-            {{#menu.trigger}}
-              {{#paper-button iconButton=true}}
-                {{paper-icon "more_vert"}}
-              {{/paper-button}}
-            {{/menu.trigger}}
-
-            {{#menu.content width=3 as |content|}}
-              {{#content.menu-item onClick=(action "addTask")}}
-                {{paper-icon "create"}}
-                <span>Ändra</span>
-              {{/content.menu-item}}
-
-              {{#content.menu-item onClick=(action "remove" task) }}
-                {{paper-icon "delete"}}
-                <span>Ta bort</span>
-              {{/content.menu-item}}
-
-            {{/menu.content}}
-          {{/paper-menu}}
-
+          {{#paper-button iconButton=true onClick=(action "remove" task)}}
+            {{paper-icon "delete" size=18}}
+          {{/paper-button}}
         {{/paper-item}}
       {{/each}}
     {{/paper-list}}

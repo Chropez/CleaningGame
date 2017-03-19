@@ -36,11 +36,6 @@ export default Component.extend({
       game.save();
     },
 
-    changeName() {
-      /* eslint-disable no-console */
-      console.error('Change name not implemented yet');
-    },
-
     remove(task) {
       let game = this.get('game');
       game.get('tasks').removeObject(task);

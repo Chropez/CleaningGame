@@ -49,7 +49,8 @@ export default Route.extend(AuthenticatedRouteMixin, {
     },
 
     joinGame(gameRecord) {
-      this.get('gameService').joinGame(gameRecord);
+      let user = this.get('session.currentUser');
+      this.get('gameService').joinGame(gameRecord, user);
       this.transitionTo('game', gameRecord);
     },
 

@@ -74,7 +74,7 @@ export default Service.extend({
     let players = game.get('players');
     let taskId = task.get('id');
     return players.map((player) => {
-      return player.get('playerTasks').findBy('task.id', taskId);
+    return player.get('playerTasks').findBy('task.id', taskId);
     });
   }
 });
