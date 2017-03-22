@@ -20,7 +20,6 @@
   "devDependencies": {
     "animal-id": "0.0.1",
     "broccoli-asset-rev": "^2.4.5",
-    "ember-add-to-homescreen": "0.1.4",
     "ember-ajax": "^2.4.1",
     "ember-browserify": "^1.1.13",
     "ember-cli": "^2.11.1",
@@ -34,6 +33,7 @@
     "ember-cli-htmlbars": "^1.1.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.6",
     "ember-cli-inject-live-reload": "^1.4.1",
+    "ember-cli-preloader": "0.2.0",
     "ember-cli-qunit": "^3.0.1",
     "ember-cli-release": "^0.2.9",
     "ember-cli-sass": "^6.1.1",
