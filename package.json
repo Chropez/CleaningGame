@@ -54,6 +54,8 @@
     "ember-truth-helpers": "1.2.0",
     "emberfire": "2.0.6",
     "eslint-plugin-ember-suave": "^1.0.0",
+    "liquid-fire": "0.27.2",
+    "liquid-fire-ios": "0.1.0",
     "loader.js": "^4.0.10"
   },
   "engines": {

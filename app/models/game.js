@@ -47,3 +47,15 @@ export let GameState = {
   Cleaning: "clean",
   Finished: "finish"
 };
+
+export let GameStateOrder = [
+  GameState.New,
+  GameState.AddingTasks,
+  GameState.Estimating,
+  GameState.ViewingEstimateResult,
+  GameState.ChoosingOrder,
+  GameState.ChoosingTasks,
+  GameState.Trading,
+  GameState.Cleaning,
+  GameState.Finished
+]

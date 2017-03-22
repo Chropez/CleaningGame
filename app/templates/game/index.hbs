@@ -1,1 +1,3 @@
-{{component gameComponent game=model}}
+{{#liquid-bind gameComponent class="game-component__transition-container" as |newGameComponent|}}
+  {{component newGameComponent game=model}}
+{{/liquid-bind}}

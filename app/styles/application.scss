@@ -16,7 +16,7 @@ body, md-content.main-content{
   color: color($color-grey);
 }
 
-#site-container {
+.site-container {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -27,6 +27,24 @@ body, md-content.main-content{
   > div, div > md-content {
     height: 100%;
   }
+}
+
+.site-container.liquid-container {
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.site-container.liquid-container > .liquid-child {
+  box-sizing: border-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .btn__full-width {
@@ -49,3 +67,5 @@ a, a:active, a:visited {
   color: color($primary, '700');
   text-decoration: none;
 }
+
+// liquid fire

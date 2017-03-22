@@ -2,7 +2,7 @@
   {{#link-to 'game' game}}
     {{#card.title as |cardTitle|}}
       {{#cardTitle.text as |text|}}
-        {{#text.headline}}{{game.id}}{{/text.headline}}
+        {{#text.headline class="animation__game-id"}}{{game.id}}{{/text.headline}}
         {{#text.subhead}}
           {{playersText}}
         {{/text.subhead}}

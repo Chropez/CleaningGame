@@ -1,4 +1,4 @@
-{{#cg-toolbar title=model.id subTitle="Städspel" onBack=(route-action "onBack") classNames="cg-toolbar__game" }}
+{{#cg-toolbar title=model.id subTitle="Städspel" titleClass="animation__game-id" onBack=(route-action "onBack") classNames="cg-toolbar__game" }}
   {{#unless (eq model.state "new")}}
     <div class="cg-toolbar__right-buttons">
       {{#paper-menu as |menu|}}
