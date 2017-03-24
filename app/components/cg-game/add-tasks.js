@@ -37,7 +37,8 @@ export default Component.extend({
 
       let promises = players.map((player) => {
         if (player.get('isDoneEstimating')) {
-          return player.set('isDoneEstimating', false);
+          player.set('isDoneEstimating', false);
+          return player.save();
         }
       });
 
