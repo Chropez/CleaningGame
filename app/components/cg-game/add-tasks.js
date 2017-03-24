@@ -5,7 +5,8 @@ const {
   Component,
   computed: { empty },
   inject: { service },
-  isEmpty
+  isEmpty,
+  RSVP: { all }
 } = Ember;
 
 export default Component.extend({
@@ -32,12 +33,37 @@ export default Component.extend({
 
     next() {
       let game = this.get('game');
-      game.set('state', GameState.Estimating);
-      game.save();
+      let players = game.get('players');
+
+      let promises = players.map((player) => {
+        if (player.get('isDoneEstimating')) {
+          return player.set('isDoneEstimating', false);
+        }
+      });
+
+      promises = promises.filter((pr) => { return pr !== undefined });
+      all(promises).then(() => {
+        game.set('state', GameState.Estimating);
+        game.save();
+      });
     },
 
     remove(task) {
       let game = this.get('game');
+      let players = game.get('players');
+      let taskId = task.get('id');
+
+      players.forEach((player) => {
+        let playerTasks = player.get('playerTasks')
+        let playerTask = playerTasks.findBy('task.id', taskId);
+
+        if (!playerTask) return;
+        playerTasks.removeObject(playerTask);
+        player.save().then(() => {
+          playerTask.destroyRecord();
+        });
+      });
+
       game.get('tasks').removeObject(task);
 
       game.save().then(() => {

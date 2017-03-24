@@ -16,11 +16,22 @@
   {{/each}}
 {{/paper-list}}
 
-{{#paper-button
-  primary=true
-  disabled=disableNext
-  raised=true
-  classNames="btn__full-width"
-  onClick=(action "next")}}
-  Fortsätt
-{{/paper-button}}
+<div class="layout-row btn-container">
+  {{#paper-button
+    disabled=disableNext
+    raised=true
+    classNames="btn__full-width btn__back"
+    onClick=(action onBack)}}
+    Backa
+  {{/paper-button}}
+
+  {{#paper-button
+    primary=true
+    disabled=disableNext
+    raised=true
+    classNames="btn__full-width btn__next"
+    onClick=(action "next")}}
+    Fortsätt
+  {{/paper-button}}
+</div>
+

@@ -2,4 +2,17 @@
   .md-list-item-estimate-status .status--done {
     color: green;
   }
+
+  .btn-container {
+    margin-top: 20px;
+  }
+
+
+  $estimateBtnMargin: 2px;
+  .btn-container .btn__back {
+    margin-right: $estimateBtnMargin;
+  }
+  .btn-container .btn__next {
+    margin-left: $estimateBtnMargin;
+  }
 }

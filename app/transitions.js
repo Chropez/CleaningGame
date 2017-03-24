@@ -13,9 +13,8 @@ export default function() {
   );
 
   this.transition(
-    // this.hasClass('game-component__transition-container'),
+    this.hasClass('game-component__transition-container'),
     this.toValue((toValue, fromValue) => {
-      // debugger;
       let to = RoutedGameStateOrder.indexOf(toValue);
       let from = RoutedGameStateOrder.indexOf(fromValue);
       return to > from;

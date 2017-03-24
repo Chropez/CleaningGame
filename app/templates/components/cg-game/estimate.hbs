@@ -2,7 +2,10 @@
 {{#paper-card as |card|}}
   {{#card.content}}
     {{#if currentPlayer.isDoneEstimating}}
-      {{cg-game/estimate/task-estimating-status game=game allPlayersDoneEstimating=allPlayersDoneEstimating}}
+      {{cg-game/estimate/task-estimating-status
+          game=game
+          allPlayersDoneEstimating=allPlayersDoneEstimating
+          onBack=(action "backToEstimating")}}
     {{else}}
       <p>
         Sätt ett betyg på hur jobbiga uppgifterna är. <br>

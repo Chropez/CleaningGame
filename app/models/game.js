@@ -9,7 +9,6 @@ export default Model.extend({
   tasks: hasMany(),
 
   hasUser(user) {
-    //let players = this.get('players');
     let users = this.get('players').map((player) => {
       return player.get('user');
     });
