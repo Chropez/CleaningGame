@@ -42,11 +42,18 @@
 
     {{content-for "head-footer"}}
   </head>
-  <body>
+  <body class="page-loading">
     {{content-for "body"}}
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/cleaning-game.js"></script>
+
+    <div class="ember-load-indicator sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
 
     {{content-for "body-footer"}}
   </body>
