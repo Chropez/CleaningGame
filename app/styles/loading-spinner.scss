@@ -1,15 +1,19 @@
 $loading-spinner-color: #00bcd4;
 $loading-spinner-color-inverted: white;
 
-
-body.page-loading {
+.page-loading {
   background-color: $loading-spinner-color;
+  height: 100%;
 
+  .sk-folding-cube {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 15px);
+  }
   .sk-folding-cube .sk-cube:before {
     background-color: $loading-spinner-color-inverted;
   }
 }
-
 
 .fade .sk-folding-cube {
   opacity: 0;
@@ -20,9 +24,9 @@ body.page-loading {
   width: 40px;
   height: 40px;
   transform: rotateZ(45deg);
-  position: absolute;
-  top: calc(50% - 40px);
-  left: calc(50% - 15px);
+  position: relative;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
   opacity: 1;
   transition: opacity .25s ease-in-out;
   -moz-transition: opacity .25s ease-in-out;

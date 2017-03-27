@@ -13,6 +13,13 @@ export default function() {
   );
 
   this.transition(
+    this.fromRoute('index'),
+    this.toRoute('loading'),
+    this.use('exitLeft'),
+    this.reverse('exitRight')
+  );
+
+  this.transition(
     this.hasClass('game-component__transition-container'),
     this.toValue((toValue, fromValue) => {
       let to = RoutedGameStateOrder.indexOf(toValue);

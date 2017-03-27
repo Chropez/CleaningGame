@@ -3,13 +3,24 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 import { GameStateOrder } from 'cleaning-game/models/game';
 
 const {
-  Route
+  Route,
+  // run: { later },
+  // RSVP: { Promise }
 } = Ember;
 
 export default Route.extend(AuthenticatedRouteMixin, {
   model({ game_id }) {
     return this.store.findRecord('game', game_id);
   },
+
+  // afterModel() {
+  //   return new Promise((resolve) => {
+  //     later(() => {
+  //       resolve();
+  //     }, 3000);
+  //   });
+  // },
+
   actions: {
     onBack() {
       this.transitionTo('index');
