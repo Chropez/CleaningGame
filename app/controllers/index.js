@@ -7,5 +7,10 @@ const {
 
 export default Controller.extend({
   session: service(),
-  showJoinDialog: false
+  showJoinDialog: false,
+  actions: {
+    onDelete() {
+
+    }
+  }
 });
