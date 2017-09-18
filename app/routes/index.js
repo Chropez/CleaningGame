@@ -66,7 +66,6 @@ export default Route.extend(AuthenticatedRouteMixin, {
         });
       });
 
-      //todo remove all dependencies
     }
   }
 });

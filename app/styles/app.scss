@@ -3,12 +3,12 @@
 @import 'ember-paper';
 
 // loading spinner
-@import 'loading-spinner';
+@import './loading-spinner';
 
 // routes
-@import 'application';
-@import 'game';
-@import 'index';
+@import './application';
+@import './game';
+@import './index';
 @import './game/participants';
 
 // components

@@ -4,7 +4,7 @@ $primary: "cyan";
 $accent: "pink";
 $link: "light-blue";
 $light-contrast-color: white;
-$color-cyan: map-merge($color-cyan, ('contrast':  $light-contrast-color));
+$color-cyan: map-merge($color-cyan, ('contrastDefaultColor':  $light-contrast-color));
 $base-background-color: color($color-grey, '100');
 $base-color: #5d5c5c;
 
