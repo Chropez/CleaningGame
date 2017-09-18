@@ -20,7 +20,7 @@ export default Component.extend({
   playersText: computed('playerUsers.@each.id', function() {
     let hasOtherPlayers = this.get('hasOtherPlayers');
     if (!hasOtherPlayers) {
-      return `Bara du i spelet`;
+      return 'Bara du i spelet';
     }
 
     let userNames = this.get('otherUsersNames');
@@ -28,12 +28,12 @@ export default Component.extend({
 
     userNames.forEach((userName, index) => {
       if (index === userNames.length - 1 && index !== 0) {
-        text += ' och '
+        text += ' och ';
       } else if (index !== 0) {
         text += ', ';
       }
       text += userName;
-    })
+    });
     return `Med ${text}`;
   }),
 

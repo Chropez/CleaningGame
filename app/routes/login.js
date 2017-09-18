@@ -5,10 +5,10 @@ export default Route.extend({
   session: service(),
 
   beforeModel() {
-      let isAuthenticated = this.get('session.isAuthenticated');
-      if (isAuthenticated) {
-        this.transitionTo('index');
-      }
+    let isAuthenticated = this.get('session.isAuthenticated');
+    if (isAuthenticated) {
+      this.transitionTo('index');
+    }
   },
 
   actions: {

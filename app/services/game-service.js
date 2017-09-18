@@ -13,8 +13,7 @@ export default Service.extend({
     let user = this.get('session.currentUser');
     let id = this.generateUniqueName();
 
-
-    let game = store.createRecord('game', { id, state: GameState.New, name :'new game' });
+    let game = store.createRecord('game', { id, state: GameState.New, name: 'new game' });
     let player = store.createRecord('player', { user, game, order: 1 });
     let userGame = store.createRecord('userGame', { user, game });
 
@@ -50,7 +49,7 @@ export default Service.extend({
   },
 
   generateUniqueName() {
-   return animalId.getId(); //@todo make sure this is unique
+    return animalId.getId(); // @todo make sure this is unique
   },
 
   setTaskAverageEstimate(game) {
@@ -58,7 +57,7 @@ export default Service.extend({
     return game.get('tasks').map((task) => {
       let playerTasksEstimate = this.getPlayerTasks(game, task).map((playerTask) => {
         return playerTask.get('estimate');
-      }).reduce((a, b) => { return a + b });
+      }).reduce((a, b) => a + b);
 
       task.set('averageEstimate', playerTasksEstimate / players);
       return task.save();
@@ -68,8 +67,6 @@ export default Service.extend({
   getPlayerTasks(game, task) {
     let players = game.get('players');
     let taskId = task.get('id');
-    return players.map((player) => {
-    return player.get('playerTasks').findBy('task.id', taskId);
-    });
+    return players.map((player) => player.get('playerTasks').findBy('task.id', taskId));
   }
 });

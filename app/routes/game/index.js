@@ -12,8 +12,8 @@ export default Route.extend({
   afterModel(model) {
     return all([
       this.store.query('player', {
-         orderBy: 'game',
-         equalTo: model.get('id')
+        orderBy: 'game',
+        equalTo: model.get('id')
       }),
       this.store.query('task', {
         orderBy: 'game',

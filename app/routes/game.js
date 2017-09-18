@@ -3,8 +3,8 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 import { GameStateOrder } from 'cleaning-game/models/game';
 
 export default Route.extend(AuthenticatedRouteMixin, {
-  model({ game_id }) {
-    return this.store.findRecord('game', game_id);
+  model(params) {
+    return this.store.findRecord('game', params.game_id);
   },
 
   // afterModel() {

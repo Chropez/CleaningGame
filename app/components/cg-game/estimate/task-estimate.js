@@ -6,7 +6,7 @@ export default Component.extend({
   classNames: 'task-estimate',
   store: service(),
   playerTasks: filter('player.playerTasks', function(playerTask) {
-    return playerTask.get('task.id') === this.get('task.id')
+    return playerTask.get('task.id') === this.get('task.id');
   }),
   playerTask: alias('playerTasks.firstObject'),
   estimate: alias('playerTask.estimate'),
@@ -22,7 +22,7 @@ export default Component.extend({
           player.get('playerTasks').removeObject(playerTask);
           return player.save().then(() => {
             playerTask.destroyRecord();
-          })
+          });
         } else {
           playerTask.set('estimate', estimate);
           return playerTask.save();

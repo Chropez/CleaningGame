@@ -36,15 +36,15 @@ export default Model.extend({
  * Finished = Cleaning is done.
  */
 export let GameState = {
-  New: "new",
-  AddingTasks: "add-tasks",
-  Estimating: "estimate",
-  ViewingEstimateResult: "view-estimate-result",
-  ChoosingOrder: "choose-order",
-  ChoosingTasks: "choose-tasks",
-  Trading: "trade",
-  Cleaning: "clean",
-  Finished: "finish"
+  New: 'new',
+  AddingTasks: 'add-tasks',
+  Estimating: 'estimate',
+  ViewingEstimateResult: 'view-estimate-result',
+  ChoosingOrder: 'choose-order',
+  ChoosingTasks: 'choose-tasks',
+  Trading: 'trade',
+  Cleaning: 'clean',
+  Finished: 'finish'
 };
 
 export let GameStateOrder = [
@@ -57,4 +57,4 @@ export let GameStateOrder = [
   GameState.Trading,
   GameState.Cleaning,
   GameState.Finished
-]
+];

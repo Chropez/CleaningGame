@@ -38,7 +38,7 @@ export default Component.extend({
         }
       });
 
-      promises = promises.filter((pr) => { return pr !== undefined });
+      promises = promises.filter((pr) => pr !== undefined);
       all(promises).then(() => {
         game.set('state', GameState.Estimating);
         game.save();
@@ -51,10 +51,13 @@ export default Component.extend({
       let taskId = task.get('id');
 
       players.forEach((player) => {
-        let playerTasks = player.get('playerTasks')
+        let playerTasks = player.get('playerTasks');
         let playerTask = playerTasks.findBy('task.id', taskId);
 
-        if (!playerTask) return;
+        if (!playerTask) {
+          return;
+        }
+
         playerTasks.removeObject(playerTask);
         player.save().then(() => {
           playerTask.destroyRecord();
@@ -67,6 +70,6 @@ export default Component.extend({
         task.destroyRecord();
       });
     }
-  },
+  }
 
 });

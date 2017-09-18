@@ -29,7 +29,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
   },
 
   actions: {
-    createNewGame(){
+    createNewGame() {
       this.get('gameService').createNewGame().then((game) => {
         this.transitionTo('game', game);
       });
@@ -39,7 +39,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
       this.get('session').invalidate();
     },
 
-    changeName(/*newName*/) {
+    changeName(/* newName */) {
       // eslint-disable-next-line no-console
       console.log('not implemented');
     },
