@@ -48,7 +48,7 @@
     "ember-paper": "^1.0.0-beta.3",
     "ember-resolver": "^4.0.0",
     "ember-route-action-helper": "2.0.6",
-    "ember-simple-auth": "1.1.0",
+    "ember-simple-auth": "^1.4.0",
     "ember-source": "~2.15.0",
     "ember-truth-helpers": "1.2.0",
     "emberfire": "^2.0.8",
