@@ -1,12 +1,6 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 import { GameStateOrder } from 'cleaning-game/models/game';
-
-const {
-  Route,
-  // run: { later },
-  // RSVP: { Promise }
-} = Ember;
 
 export default Route.extend(AuthenticatedRouteMixin, {
   model({ game_id }) {

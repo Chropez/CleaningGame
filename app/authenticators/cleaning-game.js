@@ -1,13 +1,9 @@
+import { resolve, reject } from 'rsvp';
+import { inject as service } from '@ember/service';
 import Base from 'ember-simple-auth/authenticators/base';
-import Ember from 'ember';
 
 /* global localStorage */
 const USER_ID_KEY = 'cg_user_id_key';
-
-const {
-  RSVP: { reject, resolve },
-  inject: { service }
-} = Ember;
 
 export default Base.extend({
   store: service(),

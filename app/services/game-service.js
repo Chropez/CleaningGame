@@ -1,12 +1,7 @@
-import Ember from 'ember';
+import Service, { inject as service } from '@ember/service';
+import { reject } from 'rsvp';
 import animalId from 'npm:animal-id';
 import { GameState } from '../models/game';
-
-const {
-  inject: { service },
-  Service,
-  RSVP: { reject }
-} = Ember;
 
 export default Service.extend({
   session: service(),

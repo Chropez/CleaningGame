@@ -1,14 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { sum, mapBy } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 import { GameState } from 'cleaning-game/models/game';
-
-const {
-  Component,
-  computed: {
-    mapBy,
-    sum
-  },
-  inject: { service }
-} = Ember;
 
 export default Component.extend({
   classNames: 'view-estimate-result',

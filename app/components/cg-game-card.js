@@ -1,16 +1,7 @@
-import Ember from 'ember';
-
-const {
-  Component,
-  computed,
-  computed: {
-    gt,
-    mapBy,
-    filter,
-    or
-  },
-  inject: { service }
-} = Ember;
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { or, filter, mapBy, gt } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
   classNames: 'cg-game-card',

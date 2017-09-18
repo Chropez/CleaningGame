@@ -1,13 +1,6 @@
-import Ember from 'ember';
-
-const {
-  Component,
-  computed: {
-    alias,
-    filter
-  },
-  inject: { service }
-} = Ember;
+import Component from '@ember/component';
+import { filter, alias } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
   classNames: 'task-estimate',

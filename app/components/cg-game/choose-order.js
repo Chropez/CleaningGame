@@ -1,12 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { sort } from '@ember/object/computed';
 import { GameState } from 'cleaning-game/models/game';
-
-const {
-  Component,
-  computed: {
-    sort
-  }
-} = Ember;
 
 export default Component.extend({
   classNames: 'cg-game-choose-order',

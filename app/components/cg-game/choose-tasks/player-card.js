@@ -1,13 +1,6 @@
-import Ember from 'ember';
-
-const {
-  Component,
-  computed,
-  computed: {
-    mapBy,
-    sum
-  }
-} = Ember;
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { sum, mapBy } from '@ember/object/computed';
 
 export default Component.extend({
   classNames: 'player-card',

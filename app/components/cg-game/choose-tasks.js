@@ -1,16 +1,8 @@
-import Ember from 'ember';
-// import { GameState } from 'cleaning-game/models/game';
-
-const {
-  Component,
-  computed,
-  computed: {
-    equal,
-    sort
-  },
-  inject: { service },
-  isEmpty
-} = Ember;
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { sort, equal } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import { isEmpty } from '@ember/utils';
 
 export default Component.extend({
   classNames: 'cg-game-choose-tasks',

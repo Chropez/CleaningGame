@@ -1,14 +1,7 @@
-import Ember from 'ember';
-
-const {
-  Component,
-  computed,
-  computed: {
-    alias,
-    filter
-  },
-  inject: { service }
-} = Ember;
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { filter, alias } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
   classNames: 'cg-game-estimate',

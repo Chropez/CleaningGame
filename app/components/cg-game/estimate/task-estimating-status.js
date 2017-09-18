@@ -1,14 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { not } from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import { all } from 'rsvp';
 import { GameState } from 'cleaning-game/models/game';
-
-const {
-  Component,
-  computed: {
-    not
-  },
-  inject: { service },
-  RSVP: { all }
-} = Ember;
 
 export default Component.extend({
   disableNext: not('allPlayersDoneEstimating'),

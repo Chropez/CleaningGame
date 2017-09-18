@@ -1,11 +1,7 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import { all } from 'rsvp';
+import Route from '@ember/routing/route';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
-
-const {
-  inject: { service },
-  RSVP: { all } ,
-  Route
-} = Ember;
 
 export default Route.extend(AuthenticatedRouteMixin, {
   gameService: service(),
