@@ -50,7 +50,6 @@ export default Base.extend({
   invalidate() {
     // @todo remove user?
     localStorage.removeItem(USER_ID_KEY);
-    this.get('session').invalidate();
     return resolve();
   },
 
