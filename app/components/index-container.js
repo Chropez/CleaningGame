@@ -3,10 +3,10 @@ import { inject as service } from '@ember/service';
 import { action } from 'ember-decorators/object';
 
 export default class IndexContainerComponent extends Component {
-  session = service()
-  gameService = service()
-  router = service()
-  store = service()
+  session = service();
+  gameService = service();
+  router = service();
+  store = service();
 
   @action
   async createNewGame() {

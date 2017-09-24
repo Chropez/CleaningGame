@@ -16,6 +16,12 @@ body, md-content.main-content{
   color: color($color-grey);
 }
 
+.card-title {
+  font-size: 16px;
+  margin: 20px 0 0;
+  color: darken(color($color-grey), 20);
+}
+
 .site-container {
   position: absolute;
   top: 0;

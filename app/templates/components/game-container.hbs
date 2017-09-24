@@ -1,0 +1,56 @@
+  {{#cg-toolbar
+    title=game.id
+    subTitle="Städspel"
+    titleClass="animation__game-id"
+    onBack=(action "onBack")
+    classNames="cg-toolbar__game"
+  }}
+
+    {{#if (and userIsInGame (not-eq game.state "new"))}}
+      <div class="cg-toolbar__right-buttons">
+        {{#paper-menu as |menu|}}
+          {{#menu.trigger}}
+            {{#paper-button iconButton=true}}
+              {{paper-icon "more_vert"}}
+            {{/paper-button}}
+          {{/menu.trigger}}
+
+          {{#menu.content width=4 as |content|}}
+            {{#content.menu-item onClick=(action "goToPrevStatus" game)}}
+              {{paper-icon "arrow_back"}}
+              <span>Föregående steg</span>
+            {{/content.menu-item}}
+          {{/menu.content}}
+        {{/paper-menu}}
+      </div>
+    {{/if}}
+  {{/cg-toolbar}}
+
+{{#site-content}}
+
+  {{#if userIsInGame}}
+    {{yield}}
+  {{else}}
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <p>Vill du vara med i Städspelet?</p>
+
+        {{#paper-button
+          primary=true
+          raised=true
+          classNames="btn__full-width"
+          onClick=(action "joinGame")
+        }}
+          Joina!
+        {{/paper-button}}
+
+        <h2 class="card-title">Andra spelare här</h2>
+
+        {{player-list players=game.players}}
+
+      {{/card.content}}
+
+    {{/paper-card}}
+  {{/if}}
+
+{{/site-content}}

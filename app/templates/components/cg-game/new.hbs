@@ -14,7 +14,13 @@
       </p>
     {{/if}}
 
-    {{#paper-button primary=true raised=true disabled=hasTooFewPlayers classNames="btn__full-width" onClick=(action "startPlaying")}}
+    {{#paper-button
+      primary=true
+      raised=true
+      disabled=hasTooFewPlayers
+      classNames="btn__full-width"
+      onClick=(action "startPlaying")
+    }}
       Börja spela!
     {{/paper-button}}
 
