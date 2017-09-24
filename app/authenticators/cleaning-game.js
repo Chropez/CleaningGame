@@ -35,7 +35,6 @@ export default Base.extend({
     // eslint-disable-next-line no-console
     console.error('Tried authenticating already logged in user');
     this.invalidate();
-    return resolve();
     // return this.getCurrentUser().then((user) => {
     //   localStorage.setItem(USER_ID_KEY, user.get('id'));
     //   return resolve(user);
@@ -51,6 +50,7 @@ export default Base.extend({
   invalidate() {
     // @todo remove user?
     localStorage.removeItem(USER_ID_KEY);
+    this.get('session').invalidate();
     return resolve();
   },
 
