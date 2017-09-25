@@ -72,6 +72,7 @@ body, md-content.main-content{
 a, a:active, a:visited {
   color: color($primary, '700');
   text-decoration: none;
+  cursor: pointer;
 }
 
 // liquid fire

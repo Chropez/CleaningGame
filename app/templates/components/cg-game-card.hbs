@@ -20,39 +20,9 @@
   {{/card.actions}}
 {{/paper-card}}
 
-{{#if showShareDialog}}
-  {{#paper-dialog class="flex-90" onClose=(toggle-action "showShareDialog" this) clickOutsideToClose=true}}
-    {{#paper-toolbar}}
-      {{#paper-toolbar-tools}}
-        <h3>Dela länk</h3>
-        <span class="flex"></span>
-        {{#paper-button iconButton=true onClick=(toggle-action "showShareDialog" this)}}{{paper-icon icon="close"}}{{/paper-button}}
-      {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-
-    {{#paper-dialog-content}}
-        <p>
-          Skicka länken nedan till de du vill bjuda in till spelet.
-        </p>
-
-        <div class="copy-text " class="layout-row">
-          <span class="flex-80">{{linkUrl}}</span>
-          {{#copy-button clipboardText=linkUrl classNames="flex"}}
-            {{paper-icon "assignment" }}
-          {{/copy-button}}
-        </div>
-
-        {{#if isPhone}}
-          <p>
-            ...eller <a href="{{smsLinkUrl}}">skicka som sms</a>.
-          </p>
-        {{/if}}
-    {{/paper-dialog-content}}
-
-    {{#paper-dialog-actions class="layout-row"}}
-      <span class="flex"></span>
-      {{#paper-button primary=true onClick=(toggle-action "showShareDialog" this)}}OK{{/paper-button}}
-    {{/paper-dialog-actions}}
-  {{/paper-dialog}}
-{{/if}}
+{{share-game-link
+  game=game
+  showDialog=showShareDialog
+  onClose=(toggle-action "showShareDialog" this)
+}}
 {{yield}}

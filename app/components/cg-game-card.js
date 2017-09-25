@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
-import { or, filter, mapBy, gt } from '@ember/object/computed';
+import { filter, mapBy, gt } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
 
 export default Component.extend({
@@ -35,25 +35,5 @@ export default Component.extend({
       text += userName;
     });
     return `Med ${text}`;
-  }),
-
-  isIPhone: computed(function() {
-    return !!navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
-  }),
-
-  isAndroid: computed(function() {
-    return !!navigator.userAgent.toLowerCase().match(/(android)/g);
-  }),
-
-  isPhone: or('isIPhone', 'isAndroid'),
-
-  smsLinkUrl: computed('game.id', function() {
-    let separator = this.get('isAndroid') ? '?' : '&';
-    let url = this.get('linkUrl');
-    return `sms:${separator}body=Ska vi spela städspelet? Joina här ${url}`;
-  }),
-
-  linkUrl: computed('game.id', function() {
-    return `${window.location.href}${this.get('game.id')}`;
   })
 });
