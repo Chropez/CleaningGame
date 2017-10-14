@@ -4,11 +4,19 @@
     <p>
       Andra spelare kan gå med genom att söka på spelet som heter
       <strong>{{game.id}}</strong>.
+      Eller dela spelet genom att
+      <a {{action (toggle-action "showShareDialog" this)}}>klicka här</a>.
     </p>
+
+    {{share-game-link
+      game=game
+      showDialog=showShareDialog
+      onClose=(toggle-action "showShareDialog" this)
+    }}
 
     {{player-list players=game.players}}
 
-    {{#if hasTooFewPlayers}}
+    {{#if notEnoughPlayers}}
       <p>
         Ni måste vara minst 2 för att spela.
       </p>

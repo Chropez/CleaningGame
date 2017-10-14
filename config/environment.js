@@ -1,9 +1,9 @@
-/* jshint node: true */
+/* eslint-env node */
 
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'cleaning-game',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -18,11 +18,11 @@ module.exports = function(environment) {
     },
 
     firebase: {
-      apiKey: "AIzaSyBUXtPCg7-oqWpcFdtn4Hqnr0mXqP9QJJg",
-      authDomain: "cleaninggame-d08ab.firebaseapp.com",
-      databaseURL: "https://cleaninggame-d08ab.firebaseio.com",
-      storageBucket: "cleaninggame-d08ab.appspot.com",
-      messagingSenderId: "650961684914"
+      apiKey: 'AIzaSyBUXtPCg7-oqWpcFdtn4Hqnr0mXqP9QJJg',
+      authDomain: 'cleaninggame-d08ab.firebaseapp.com',
+      databaseURL: 'https://cleaninggame-d08ab.firebaseio.com',
+      storageBucket: 'cleaninggame-d08ab.appspot.com',
+      messagingSenderId: '650961684914'
     },
 
     APP: {
