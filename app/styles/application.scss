@@ -32,6 +32,7 @@ body, md-content.main-content{
 
   > div, div > md-content {
     height: 100%;
+    overflow: auto;
   }
 }
 
