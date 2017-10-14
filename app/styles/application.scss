@@ -30,10 +30,10 @@ body, md-content.main-content{
   right: 0;
   height: 100%;
 
-  > div, div > md-content {
-    height: 100%;
-    overflow: auto;
-  }
+  // > div, div > md-content {
+  //   height: 100%;
+  //   overflow: auto;
+  // }
 }
 
 .site-container.liquid-container {
@@ -45,7 +45,8 @@ body, md-content.main-content{
   flex: 1;
 }
 
-.site-container.liquid-container > .liquid-child {
+.site-container.liquid-container > .liquid-child,
+.site-container.liquid-container > .liquid-child > .ember-view {
   box-sizing: border-box;
   display: -ms-flexbox;
   display: flex;

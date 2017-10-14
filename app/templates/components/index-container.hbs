@@ -58,4 +58,6 @@
   {{#if showJoinDialog}}
     {{index/join-game-dialog onJoinGame=(pipe (action "joinGame") (toggle "showJoinDialog" this)) onCloseDialog=(toggle-action "showJoinDialog" this)}}
   {{/if}}
+
+  <div style="height: 1000px"></div>
 {{/site-content}}
