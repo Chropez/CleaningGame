@@ -43,6 +43,7 @@ body, md-content.main-content{
   flex-direction: row;
   -ms-flex: 1;
   flex: 1;
+  align-items: start;
 }
 
 .site-container.liquid-container > .liquid-child,
@@ -53,6 +54,7 @@ body, md-content.main-content{
   flex-direction: column;
   -ms-flex: 1;
   flex: 1;
+  height: 100%;
 }
 
 .btn__full-width {

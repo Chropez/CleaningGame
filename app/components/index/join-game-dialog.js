@@ -5,7 +5,11 @@ export default Component.extend({
   store: service(),
   actions: {
     joinGame(game) {
-      this.get('store').findRecord('game', game).then((gameRecord) => {
+      if (game === undefined) {
+        return;
+      }
+
+      this.get('store').findRecord('game', game.toLowerCase()).then((gameRecord) => {
         gameRecord.get('players').then(() => {
           this.get('onJoinGame')(gameRecord);
         });
