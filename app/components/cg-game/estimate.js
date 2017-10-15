@@ -64,9 +64,10 @@ export default Component.extend({
     async removeEstimate(playerTask) {
       debugger;
       let player = this.get('currentPlayer');
-      player.get('playerTasks').removeObject(playerTask);
+      let playerTaskRecord = player.get('playerTasks').findBy('id', playerTask.get('id'));
+      player.get('playerTasks').removeObject(playerTaskRecord);
       await player.save();
-      playerTask.destroyRecord();
+      await playerTaskRecord.destroyRecord();
     }
   }
 });
