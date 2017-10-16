@@ -32,7 +32,6 @@
 
   <div class="welcome-banner">
     <div class="toolbar__text layout-row layout-align-center-end">
-      {{!--<div class="secondary-text">Välkommen</div>--}}
       <div class="primary-text">
         {{session.currentUser.name}}
       </div>
@@ -53,11 +52,10 @@
 
   {{!-- Bottom of page --}}
   {{!--{{cg-fab-button icon="reply" classNames="fab--join" onClick=(toggle "showJoinDialog" this)}}--}}
-  {{cg-fab-button icon="add"  accent=true onClick=(action "createNewGame")}}
 
   {{#if showJoinDialog}}
     {{index/join-game-dialog onJoinGame=(pipe (action "joinGame") (toggle "showJoinDialog" this)) onCloseDialog=(toggle-action "showJoinDialog" this)}}
   {{/if}}
-
-  <div style="height: 1000px"></div>
 {{/site-content}}
+
+{{cg-fab-button icon="add"  accent=true onClick=(action "createNewGame")}}

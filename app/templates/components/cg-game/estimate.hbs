@@ -13,7 +13,14 @@
       </p>
 
       {{#each game.tasks as |task|}}
-        {{cg-game/estimate/task-estimate game=game task=task player=currentPlayer}}
+        {{cg-game/estimate/task-estimate
+          task=task
+          playerId=currentPlayer.playerId
+          playerTasks=currentPlayer.playerTasks
+          onEstimate=(action "estimate")
+          onRemoveEstimate=(action "removeEstimate")
+          classNames="task-estimate"
+        }}
       {{/each}}
 
       {{#paper-button primary=true disabled=disableDoneEstimating raised=true classNames="btn__full-width" onClick=(action "doneEstimating")}}

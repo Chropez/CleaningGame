@@ -23,6 +23,7 @@ export default Base.extend({
   },
 
   authenticate(name) {
+    debugger;
     if (!this.hasSavedUser()) {
       return this.createUser(name).then((user) => {
         this.setCurrentUser(user);

@@ -1,21 +1,23 @@
-{{cg-toolbar title="Välj namn"}}
+<div>
+  {{cg-toolbar title="Välj namn"}}
 
-<div class="layout-row layout-xs-column">
-  <div class="layout-column flex-xs flex-gt-xs-50">
-    {{#paper-card as |card|}}
-      {{#card.content class=""}}
+  <div class="layout-row layout-xs-column">
+    <div class="layout-column flex-xs flex-gt-xs-50">
+      {{#paper-card as |card|}}
+        {{#card.content class=""}}
 
-        <form {{action (route-action "login" name) on="submit"}}>
-          <div class="layout-row">
-            <div class="layout-column flex-80">
-              {{paper-input label="Välj ett namn" value=name onChange=(action (mut name)) required=true}}
+          <form {{action (route-action "login" name) on="submit"}}>
+            <div class="layout-row">
+              <div class="layout-column flex-80">
+                {{paper-input label="Välj ett namn" value=name onChange=(action (mut name)) required=true}}
+              </div>
+
+              {{#paper-button raised=true primary=true type="submit" class="btn-inline"}}Ok{{/paper-button}}
             </div>
+          </form>
 
-            {{#paper-button raised=true primary=true type="submit" class="btn-inline"}}Ok{{/paper-button}}
-          </div>
-        </form>
-
-      {{/card.content}}
-    {{/paper-card}}
+        {{/card.content}}
+      {{/paper-card}}
+    </div>
   </div>
 </div>
