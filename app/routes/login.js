@@ -12,8 +12,12 @@ export default Route.extend({
   },
 
   actions: {
-    login(name) {
-      this.get('session').authenticate('authenticator:cleaning-game', name);
+    async login(name) {
+
+      await this.get('session')
+        .authenticate('authenticator:cleaning-game', name);
+      this.transitionTo('application');
+
     }
   }
 });

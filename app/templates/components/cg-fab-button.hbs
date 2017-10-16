@@ -1,7 +1,9 @@
-{{#paper-button accent=accent raised=true fab=true iconButton=true onClick=onClick}}
-  {{#if icon}}
-    {{paper-icon icon}}
-  {{else}}
-    {{yield}}
-  {{/if}}
-{{/paper-button}}
+{{#ember-wormhole to="fab-destination"}}
+  {{#paper-button accent=accent raised=true fab=true iconButton=true onClick=onClick}}
+    {{#if icon}}
+      {{paper-icon icon}}
+    {{else}}
+      {{yield}}
+    {{/if}}
+  {{/paper-button}}
+{{/ember-wormhole}}

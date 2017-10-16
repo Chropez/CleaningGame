@@ -28,33 +28,22 @@ body, md-content.main-content{
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-
-  // > div, div > md-content {
-  //   height: 100%;
-  //   overflow: auto;
-  // }
+  // height: 100%;
 }
 
 .site-container.liquid-container {
   box-sizing: border-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: row;
-  -ms-flex: 1;
   flex: 1;
-  align-items: start;
 }
 
 .site-container.liquid-container > .liquid-child,
 .site-container.liquid-container > .liquid-child > .ember-view {
   box-sizing: border-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
-  -ms-flex: 1;
   flex: 1;
-  height: 100%;
 }
 
 .btn__full-width {

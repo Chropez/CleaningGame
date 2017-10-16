@@ -56,7 +56,6 @@
   {{#if showJoinDialog}}
     {{index/join-game-dialog onJoinGame=(pipe (action "joinGame") (toggle "showJoinDialog" this)) onCloseDialog=(toggle-action "showJoinDialog" this)}}
   {{/if}}
-
 {{/site-content}}
 
 {{cg-fab-button icon="add"  accent=true onClick=(action "createNewGame")}}
