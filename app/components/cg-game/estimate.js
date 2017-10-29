@@ -62,7 +62,6 @@ export default Component.extend({
     },
 
     async removeEstimate(playerTask) {
-      debugger;
       let player = this.get('currentPlayer');
       let playerTaskRecord = player.get('playerTasks').findBy('id', playerTask.get('id'));
       player.get('playerTasks').removeObject(playerTaskRecord);
